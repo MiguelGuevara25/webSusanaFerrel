@@ -5,6 +5,7 @@ import Home from "./views/home/page/Home";
 import Blog from "./views/blog/page/Blog";
 import AboutUs from "./views/aboutus/page/AboutUs";
 import Contact from "./views/contact/page/Contact";
+import Courses from "./views/academia/page/Courses";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,16 @@ const router = createBrowserRouter([
         path: "/contacto",
         element: <Contact />,
       },
+
+      {
+        path: "/academia",
+        element: <Courses />,
+      },
+
+      {
+        path: "*",
+        element: <h1>404</h1>,
+      }
     ],
   },
 ]);

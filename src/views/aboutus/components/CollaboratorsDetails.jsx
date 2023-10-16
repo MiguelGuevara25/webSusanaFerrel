@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
 const CollaboratorsDetails = () => {
-  const [prueba, setPrueba] = useState([]);
+  const [obtenerColaborador, setObtenerColaborador] = useState([]);
 
-  const getPrueba = async () => {
-    const url = "http://localhost:1337/api/trabajadores";
+  const getColaborador = async () => {
+    const url = `${import.meta.env.VITE_API_URL}trabajadores?populate=imagen`;
     const res = await fetch(url);
     const data = await res.json();
-    setPrueba(data.data);
+    setObtenerColaborador(data.data);
   };
 
   useEffect(() => {
-    getPrueba();
+    getColaborador();
   }, []);
 
   return (
@@ -23,17 +23,19 @@ const CollaboratorsDetails = () => {
       <img src="/images/rectangle-6.png" className="my-10" />
 
       <div className="px-6 flex flex-col gap-14">
-        {prueba.map((item) => {
+        {obtenerColaborador.map((colaborador) => {
+          const { nombre, descripcion } = colaborador.attributes;
+
           return (
-            <div key={item.id} className="flex flex-col gap-4">
+            <div key={colaborador.id} className="flex flex-col gap-4">
               <img src="/images/rectangle-18.png" alt="" />
 
               <div className="font-semibold">
-                <h3 className="text-2xl">{item.attributes.nombre}</h3>
+                <h3 className="text-2xl">{nombre}</h3>
                 <span>Consultor</span>
               </div>
 
-              <p>{item.attributes.descripcion}</p>
+              <p>{descripcion}</p>
             </div>
           );
         })}
