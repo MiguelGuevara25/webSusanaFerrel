@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.photo {
+  background-image: linear-gradient(
+      0deg,
+      #024f3c 0.19%,
+      rgba(2, 79, 60, 0) 90.03%
+    ),
+    url("/images/rectangle-17.png");
+  width: 100%;
+  height: 542px;
+  background-size: cover;
+}
+
+/* .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
