@@ -18,9 +18,17 @@ const Servicios = () => {
         </div>
       </div>
 
-      <Partners />
-      <ServicesCoach />
-      <Testimonials />
+      <div className="mb-44 mt-16">
+        <Partners />
+      </div>
+
+      <div className="mb-24">
+        <ServicesCoach />
+      </div>
+
+      <div className="mb-24">
+        <Testimonials />
+      </div>
     </>
   );
 };

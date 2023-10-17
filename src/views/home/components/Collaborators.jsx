@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import Subtitles from "../../../components/Subtitles";
 
 const Collaborators = () => {
@@ -19,27 +18,25 @@ const Collaborators = () => {
 
   return (
     <>
-      <section className="flex gap-8 flex-col px-6">
-        <Subtitles>Juntos lograremos tu mejor versión</Subtitles>
+      <section className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4 px-6">
+          <Subtitles>Juntos lograremos tu mejor versión</Subtitles>
 
-        <p>
-          Somos profesionales capacitados para la transformación de equipos y
-          sus integrantes a través del aprendizaje, creando un ambiente ideal
-          para tu desarrollo personal, el de tu empresa y tus colaboradores.
-        </p>
+          <p>
+            Somos profesionales capacitados para la transformación de equipos y
+            sus integrantes a través del aprendizaje, creando un ambiente ideal
+            para tu desarrollo personal, el de tu empresa y tus colaboradores.
+          </p>
+        </div>
 
         <Swiper
-          slidesPerView={2}
-          spaceBetween={20}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper flex gap-5 text-xs w-full [&>div>div]:mb-9 [&>div>span]:bg-[#128266]"
+          slidesPerView={"auto"}
+          className="mySwiper w-full text-xs"
+          style={{ marginLeft: "24px" }}
         >
           {prueba.map((item) => {
             return (
-              <SwiperSlide key={item.id}>
+              <SwiperSlide key={item.id} style={{ width: "140px" }}>
                 <div className="flex flex-col items-center gap-0.5">
                   <img src="/images/ellipse-13.svg" />
                   <span className="font-semibold text-center">
@@ -54,31 +51,29 @@ const Collaborators = () => {
       </section>
 
       {/* Sección 2 */}
-      <section className="px-6 my-16">
+      <section className="px-6 mt-[86px] mb-24">
         <Subtitles>
           3 formas de
           <br />
           potenciarte
         </Subtitles>
 
-        <div className="flex flex-col gap-10 mt-10">
-          <div className="flex items-center gap-10 flex-1">
+        <div className="flex flex-col gap-10 mt-20">
+          <div className="flex gap-4 items-center justify-between">
             <img src="/images/group-24.svg" />
-            <span className="text-xl w-max">Coaching Personal</span>
+            <span className="text-2xl w-min">Coaching personal</span>
             <img src="/images/arrowRight.svg" alt="" />
           </div>
 
-          <div className="flex items-center gap-10 flex-1">
+          <div className="flex gap-4 items-center justify-between">
             <img src="/images/group-24.svg" />
-
-            <span className="text-xl w-max">Coaching Personal</span>
+            <span className="text-2xl w-min">Coaching grupal</span>
             <img src="/images/arrowRight.svg" alt="" />
           </div>
 
-          <div className="flex items-center gap-10 flex-1">
+          <div className="flex gap-4 items-center justify-between">
             <img src="/images/group-24.svg" />
-
-            <span className="text-xl w-max">Coaching Personal</span>
+            <span className="text-2xl w-min">Coaching social</span>
             <img src="/images/arrowRight.svg" alt="" />
           </div>
         </div>

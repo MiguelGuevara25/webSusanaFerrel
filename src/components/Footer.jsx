@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import { IoCall, IoMail, IoLocationSharp } from "react-icons/io5";
 
 const Footer = () => {
   return (
     <footer className="bg-[#024F3C] py-14 px-6">
-      <section className="flex gap-5 px-0 pb-8 border-b border-white">
+      <section className="flex gap-5 px-0 pb-8 border-b border-[#81fdde33]">
         <Link to="/">
           <p className="text-[#81FDDE]">Inicio</p>
         </Link>
@@ -20,12 +21,23 @@ const Footer = () => {
       </section>
 
       <section className="pt-14 pb-[70px] text-white flex flex-col gap-5">
-        <h1 className="pb-2.5 text-2xl font-semibold">Contacto</h1>
+        <h3 className="pb-2.5 text-2xl font-semibold">Contacto</h3>
 
-        <div className="flex flex-col gap-2.5">
-          <p>Dirección</p>
-          <p>+51 931130017</p>
-          <p>correo@correo.com</p>
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center gap-4">
+            <IoLocationSharp />
+            <span>Dirección</span>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <IoCall />
+            <span>+51 931130017</span>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <IoMail />
+            <span>hola@susanaferrel.com</span>
+          </div>
         </div>
       </section>
 
@@ -34,17 +46,17 @@ const Footer = () => {
           <p>©2023 Susana Ferrel - Derechos reservados</p>
         </div>
 
-        <div className="flex gap-4">
-          <div className="bg-[#128266] px-3 py-3 rounded-full">
-            <img src="/images/linkedin.svg" className="w-5 h-5" />
+        <div className="flex gap-4 [&>div]:bg-[#128266] [&>div]:rounded-full [&>div]:p-3 [&>div>img]:w-5 [&>div>img]:h-5">
+          <div>
+            <img src="/images/linkedin.svg" />
           </div>
 
-          <div className="bg-[#128266] px-3 py-3 rounded-full">
-            <img src="/images/instagram.svg" className="w-5 h-5" />
+          <div>
+            <img src="/images/instagram.svg" />
           </div>
 
-          <div className="bg-[#128266] px-3 py-3 rounded-full">
-            <img src="/images/facebook.svg" className="w-5 h-5" />
+          <div>
+            <img src="/images/facebook.svg" />
           </div>
         </div>
       </section>

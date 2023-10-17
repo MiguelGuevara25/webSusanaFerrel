@@ -1,6 +1,6 @@
 const Partners = () => {
   return (
-    <section className="text-[#024F3C] my-10">
+    <section className="text-[#024F3C]">
       <div className="px-6 mb-10">
         <h2 className="text-[64px] italic font-bold">+40</h2>
         <p className="font-semibold text-2xl">

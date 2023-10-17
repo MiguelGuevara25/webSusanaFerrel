@@ -21,19 +21,19 @@ const Courses = () => {
       <div className="photo flex items-end text-center">
         <div className="flex flex-col items-center px-6 text-white gap-9 mb-16">
           <h1 className="font-bold text-4xl">
-            Descubre nuestros servicios que potenciarán tu mejor yo
+            Nuestra academia tiene lo indicado para ti y tu equipo
           </h1>
 
           <p>
-            Conoce todas la posibilidades que pueden potenciar a ti y a tu
-            equipo.
+            Todo lo que ofrecemos esta diseñado para ayudarte a crear la mejor
+            versión de ti.
           </p>
         </div>
       </div>
 
       <section className="px-6 flex flex-col">
         {obtenerCursos.length === 0 ? (
-          <h1>Loading...</h1>
+          <Subtitles>Cargando Cursos...</Subtitles>
         ) : (
           obtenerCursos.map((cursos) => {
             const { imagen, descripcion, titulo } = cursos.attributes;
@@ -41,7 +41,7 @@ const Courses = () => {
               import.meta.env.VITE_IMG_URL + imagen.data.attributes.url;
 
             return (
-              <div key={cursos.id} className="flex flex-col gap-8 my-14">
+              <div key={cursos.id} className="flex flex-col gap-8 mb-12">
                 <img
                   src={urlIMG}
                   alt={`Imagen del curso ${titulo}`}

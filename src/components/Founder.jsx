@@ -1,6 +1,18 @@
 const Founder = () => {
   return (
-    <section className="mb-24">
+    <>
+      <div className="relative h-[386px] mb-9">
+        <img
+          src="/images/photo1.png"
+          className="rounded-full absolute w-96 h-96 -right-10"
+          alt=""
+        />
+        <img
+          src="/images/ellipse-18.svg"
+          className="absolute left-10 bottom-0"
+        />
+      </div>
+
       <div className="px-6">
         <h1 className="text-5xl text-[#2EB593]">Susana Ferrel</h1>
         <span>CEO & Founder</span>
@@ -14,7 +26,7 @@ const Founder = () => {
           Consultora.
         </p>
       </div>
-    </section>
+    </>
   );
 };
 

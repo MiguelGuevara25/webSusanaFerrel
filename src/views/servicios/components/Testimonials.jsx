@@ -3,7 +3,7 @@ import { Pagination } from "swiper/modules";
 
 const Testimonials = () => {
   return (
-    <section className="bg-[#E1F4F0] rounded-xl mx-6 text-[#024F3C] my-14 px-7 py-10">
+    <section className="bg-[#E1F4F0] rounded-xl mx-6 text-[#024F3C] px-7 py-10">
       <div className="text-center mb-9">
         <h3 className="font-semibold text-sm mb-4">COACHING PERSONAL</h3>
         <p>

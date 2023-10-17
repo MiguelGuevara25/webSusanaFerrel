@@ -5,7 +5,7 @@ import Courses from "../components/Courses";
 const AboutUs = () => {
   return (
     <>
-      <div className="photo mb-10"></div>
+      <div className="photo"></div>
       <Founder />
       <Courses />
       <CollaboratorsDetails />

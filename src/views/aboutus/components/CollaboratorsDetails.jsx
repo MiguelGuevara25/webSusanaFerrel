@@ -15,7 +15,7 @@ const CollaboratorsDetails = () => {
   }, []);
 
   return (
-    <section className="mb-16">
+    <section>
       <h2 className="text-[#024F3C] text-3xl font-bold px-7">
         Conoce al equipo que te llevarán a lo más alto
       </h2>

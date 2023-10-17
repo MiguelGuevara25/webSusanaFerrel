@@ -2,7 +2,7 @@ import Button from "../../../components/Button";
 
 const Contact = () => {
   return (
-    <div className="px-4 my-10">
+    <div className="px-4">
       <img src="/images/group-33.svg" />
       <h2 className="text-[#024F3C] font-semibold text-2xl my-7">
         Cuéntanos cómo podemos potenciar tu mejor tu
