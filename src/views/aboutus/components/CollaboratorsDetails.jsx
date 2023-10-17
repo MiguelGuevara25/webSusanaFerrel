@@ -20,7 +20,7 @@ const CollaboratorsDetails = () => {
         Conoce al equipo que te llevarán a lo más alto
       </h2>
 
-      <img src="/images/rectangle-6.png" className="my-10" />
+      <img src="/images/rectangle-6.png" className="mt-8 mb-12" />
 
       <div className="px-6 flex flex-col gap-14">
         {obtenerColaborador.map((colaborador) => {

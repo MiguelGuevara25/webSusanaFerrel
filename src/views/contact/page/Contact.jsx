@@ -2,7 +2,7 @@ import Button from "../../../components/Button";
 
 const Contact = () => {
   return (
-    <div className="px-4">
+    <div className="px-4 mt-10 mb-24">
       <img src="/images/group-33.svg" />
       <h2 className="text-[#024F3C] font-semibold text-2xl my-7">
         Cuéntanos cómo podemos potenciar tu mejor tu
@@ -19,7 +19,7 @@ const Contact = () => {
           placeholder="Cuéntanos cómo te ayudamos..."
         ></textarea>
 
-        <Button mb="10">Enviar</Button>
+        <Button>Enviar</Button>
       </form>
     </div>
   );

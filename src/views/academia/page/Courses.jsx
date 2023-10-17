@@ -31,7 +31,7 @@ const Courses = () => {
         </div>
       </div>
 
-      <section className="px-6 flex flex-col">
+      <section className="px-6 flex flex-col mt-[120px]">
         {obtenerCursos.length === 0 ? (
           <Subtitles>Cargando Cursos...</Subtitles>
         ) : (
@@ -41,7 +41,7 @@ const Courses = () => {
               import.meta.env.VITE_IMG_URL + imagen.data.attributes.url;
 
             return (
-              <div key={cursos.id} className="flex flex-col gap-8 mb-12">
+              <div key={cursos.id} className="flex flex-col gap-8 mb-20">
                 <img
                   src={urlIMG}
                   alt={`Imagen del curso ${titulo}`}

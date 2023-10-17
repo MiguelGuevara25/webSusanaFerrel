@@ -6,8 +6,14 @@ const AboutUs = () => {
   return (
     <>
       <div className="photo"></div>
-      <Founder />
-      <Courses />
+      <div className="mt-5 mb-[105px]">
+        <Founder />
+      </div>
+
+      <div className="mb-24">
+        <Courses />
+      </div>
+
       <CollaboratorsDetails />
     </>
   );

@@ -3,17 +3,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Subtitles from "../../../components/Subtitles";
 
 const Collaborators = () => {
-  const [prueba, setPrueba] = useState([]);
+  const [colaborador, setColaborador] = useState([]);
 
-  const getPrueba = async () => {
-    const url = "http://localhost:1337/api/trabajadores";
+  const getColaborador = async () => {
+    const url = `${import.meta.env.VITE_API_URL}trabajadores?populate=imagen`;
     const res = await fetch(url);
     const data = await res.json();
-    setPrueba(data.data);
+    setColaborador(data.data);
   };
 
   useEffect(() => {
-    getPrueba();
+    getColaborador();
   }, []);
 
   return (
@@ -34,7 +34,7 @@ const Collaborators = () => {
           className="mySwiper w-full text-xs"
           style={{ marginLeft: "24px" }}
         >
-          {prueba.map((item) => {
+          {colaborador.map((item) => {
             return (
               <SwiperSlide key={item.id} style={{ width: "140px" }}>
                 <div className="flex flex-col items-center gap-0.5">
