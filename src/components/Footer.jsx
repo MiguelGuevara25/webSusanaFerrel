@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#024F3C] py-14">
       <div className="w-[87%] mx-auto">
-        <section className="flex gap-5 px-0 pb-8 border-b border-[#81fdde33]">
+        <section className="flex gap-5 px-0 pb-8 border-b border-[#81fdde33] md:justify-end">
           <Link to="/">
             <p className="text-[#81FDDE]">Inicio</p>
           </Link>

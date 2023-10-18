@@ -7,7 +7,7 @@ const Navbar = () => {
     <>
       <nav className="flex justify-between items-center p-6 md:px-24 bg-white text-[#024F3C]">
         <div className="flex">
-          <img src="/images/vector.svg" />
+          <img src="/images/Vector.svg" />
           <img src="/images/vector1.svg" />
           <img src="/images/vector2.svg" />
         </div>
