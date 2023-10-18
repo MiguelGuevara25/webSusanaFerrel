@@ -4,25 +4,23 @@ const Founder = () => {
   const location = useLocation();
 
   return (
-    <>
+    <section className="flex flex-col lg:flex-row w-[87%] mx-auto items-center lg:gap-36">
       {location.pathname === "/" && (
-        <div className="relative h-[386px] mb-9">
-          <img
-            src="/images/photo1.png"
-            className="rounded-full absolute w-96 h-96 -right-10"
-            alt=""
-          />
-          <img
-            src="/images/ellipse-18.svg"
-            className="absolute left-10 bottom-0"
-          />
+        <div
+          className="lg:w-1/2 mb-8 lg:mb-0 relative"
+          data-aos="fade-right"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+        >
+          <img src="/images/susanaProfile.png" className="w-full" />
+          <img src="/images/ellipse-18.svg" className="absolute bottom-0" />
         </div>
       )}
 
-      <div className="px-6">
-        <h1 className="text-5xl text-[#2EB593]">Susana Ferrel</h1>
-        <span>CEO & Founder</span>
-        <p className="mt-6">
+      <div className="lg:w-1/2">
+        <img src="/images/nombreSusana.svg" className="mb-4" />
+        <p className="mb-6 lg:mb-10">CEO & Founder</p>
+        <p className="">
           Mentora, coach bilingüe, consultora en Aprendizaje y Desarrollo y
           Administradora de Empresas, con más de 20 años de experiencia como
           líder profesional en la gestión de procesos de Recursos Humanos:
@@ -32,7 +30,7 @@ const Founder = () => {
           Consultora.
         </p>
       </div>
-    </>
+    </section>
   );
 };
 

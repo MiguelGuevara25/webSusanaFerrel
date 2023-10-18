@@ -1,22 +1,31 @@
 import { Outlet } from "react-router-dom";
-import NavMenu from "/images/Icons.svg";
-import Logo from "/images/Vector.svg";
-import Logo1 from "/images/vector1.svg";
-import Logo2 from "/images/vector2.svg";
 import Footer from "./Footer";
+import Button from "./Button";
 
 const Navbar = () => {
   return (
     <>
-      <nav className="flex justify-between p-6 bg-white">
+      <nav className="flex justify-between items-center p-6 md:px-24 bg-white text-[#024F3C]">
         <div className="flex">
-          <img src={Logo} alt="logo" />
-          <img src={Logo1} alt="logo" />
-          <img src={Logo2} alt="logo" />
+          <img src="/images/vector.svg" />
+          <img src="/images/vector1.svg" />
+          <img src="/images/vector2.svg" />
         </div>
 
-        <div>
-          <img src={NavMenu} />
+        <div className="lg:flex gap-14 font-medium hidden">
+          <span>Inicio</span>
+          <span>Qué hacemos</span>
+          <span>Quiénes somos</span>
+          <span>Blog</span>
+          <span>Academia</span>
+        </div>
+
+        <div className="lg:block hidden">
+          <Button>Conversemos</Button>
+        </div>
+
+        <div className="lg:hidden">
+          <img src="/images/Icons.svg" />
         </div>
       </nav>
 

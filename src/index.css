@@ -19,3 +19,6 @@ h1 {
   background-size: cover;
 }
 
+.animationButton:hover {
+  animation: pulse 1s infinite;
+}
