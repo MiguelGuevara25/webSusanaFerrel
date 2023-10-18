@@ -9,7 +9,7 @@ const Partners = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 md:grid-cols-5 px-6 gap-6 place-items-center relative">
+      <div className="grid grid-cols-3 md:grid-cols-5 px-6 gap-6 place-items-center">
         <img src="/images/entel.svg" />
         <img src="/images/alicorp.svg" />
         <img src="/images/calidda.svg" />
@@ -19,10 +19,10 @@ const Partners = () => {
         <img src="/images/laureate.svg" />
         <img src="/images/backus.svg" />
         <img src="/images/roche.svg" />
-        <img
+        {/* <img
           src="/images/prueba.svg"
           className="absolute -bottom-16 -z-10 w-full"
-        />
+        /> */}
       </div>
     </section>
   );

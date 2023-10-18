@@ -2,52 +2,76 @@ import Subtitles from "../../../components/Subtitles";
 
 const ServicesCoach = () => {
   return (
-    <section className="px-6 flex flex-col gap-20">
-      <div className="flex flex-col gap-4 items-center">
-        <img src="/images/group-24.svg" alt="" />
+    <section className="w-[87%] mx-auto flex flex-col md:flex-row md:gap-16 gap-20 [&>div]:flex-1">
+      <div className="flex flex-col justify-between gap-8">
+        <div className="flex flex-col">
+          <img
+            src="/images/group-24.svg"
+            width={245}
+            className="mb-12 self-center"
+            alt=""
+          />
 
-        <Subtitles self="start">Coaching personal</Subtitles>
+          <Subtitles self="start">Coaching</Subtitles>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-          elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-          malesuada sed ut elementum lacus.
-        </p>
+          <p className="mt-4">
+            Te acompañamos para que liberes tu potencial personal y profesional,
+            te ayudaremos a identificar limitantes que son obstáculos para
+            lograr tus metas, y tomarás consciencia para decidir y generar
+            cambios, impactando positivamente en diferentes ámbitos de tu vida.
+          </p>
+        </div>
 
-        <button className="flex text-[#2EB593] font-semibold gap-3 items-center self-start">
+        <button className="flex text-[#2EB593] font-semibold items-center gap-3 ">
           <p>Empecemos hoy</p>
           <img src="/images/group-10.svg" width={25} alt="" />
         </button>
       </div>
 
-      <div className="flex flex-col gap-4 items-center">
-        <img src="/images/group-24.svg" alt="" />
+      <div className="flex flex-col justify-between gap-8">
+        <div className="flex flex-col">
+          <img
+            src="/images/group-24.svg"
+            width={245}
+            className="mb-12 self-center"
+            alt=""
+          />
 
-        <Subtitles self="start">Coaching personal</Subtitles>
+          <Subtitles self="start">Mentoring</Subtitles>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-          elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-          malesuada sed ut elementum lacus.
-        </p>
+          <p className="mt-4">
+            Como MENTORES dejaremos nuestro legado compartiendo nuestras
+            experiencias y aprendizajes que el MENTEE podrá capitalizar con la
+            finalidad de prepararse para sus siguientes posiciones de liderazgo.
+          </p>
+        </div>
 
-        <button className="flex text-[#2EB593] font-semibold gap-3 items-center self-start">
+        <button className="flex text-[#2EB593] font-semibold items-center gap-3">
           <p>Empecemos hoy</p>
           <img src="/images/group-10.svg" width={25} alt="" />
         </button>
       </div>
 
-      <div className="flex flex-col gap-4 items-center">
-        <img src="/images/group-24.svg" alt="" />
-        <Subtitles self="start">Coaching personal</Subtitles>
+      <div className="flex flex-col justify-between gap-8">
+        <div className="flex flex-col">
+          <img
+            src="/images/group-24.svg"
+            width={245}
+            className="mb-12 self-center"
+            alt=""
+          />
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-          elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-          malesuada sed ut elementum lacus.
-        </p>
+          <Subtitles self="start">Liderazgo</Subtitles>
 
-        <button className="flex text-[#2EB593] font-semibold gap-3 items-center self-start">
+          <p className="mt-4">
+            A través de una mirada apreciativa, construyendo hacia afuera,
+            activando la comunicación, empatía, confianza, escucha y promoviendo
+            espacios seguros para desarrollar a su equipo y fortaleciendo su
+            marca personal como referente en la organización.
+          </p>
+        </div>
+
+        <button className="flex text-[#2EB593] font-semibold items-center gap-3">
           <p>Empecemos hoy</p>
           <img src="/images/group-10.svg" width={25} alt="" />
         </button>
