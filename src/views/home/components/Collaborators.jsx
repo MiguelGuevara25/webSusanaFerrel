@@ -19,10 +19,10 @@ const Collaborators = () => {
   return (
     <>
       <section className="flex flex-col gap-8">
-        <div className="flex flex-col gap-4 px-6">
+        <div className="flex flex-col gap-4 w-[87%] mx-auto">
           <Subtitles>Juntos lograremos tu mejor versión</Subtitles>
 
-          <p>
+          <p className="lg:w-3/5 w-full">
             Somos profesionales capacitados para la transformación de equipos y
             sus integrantes a través del aprendizaje, creando un ambiente ideal
             para tu desarrollo personal, el de tu empresa y tus colaboradores.
@@ -51,30 +51,36 @@ const Collaborators = () => {
       </section>
 
       {/* Sección 2 */}
-      <section className="px-6 mt-[86px] mb-24">
+      <section className="mt-[86px] w-[87%] mx-auto mb-24">
         <Subtitles>
           3 formas de
           <br />
           potenciarte
         </Subtitles>
 
-        <div className="flex flex-col gap-10 mt-20">
-          <div className="flex gap-4 items-center justify-between">
+        <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
+          <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
             <img src="/images/group-24.svg" />
-            <span className="text-2xl w-min">Coaching personal</span>
-            <img src="/images/arrowRight.svg" alt="" />
+            <div className="flex gap-6">
+              <span className="text-2xl">Coaching</span>
+              <img src="/images/arrowRight.svg" alt="" />
+            </div>
           </div>
 
-          <div className="flex gap-4 items-center justify-between">
+          <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
             <img src="/images/group-24.svg" />
-            <span className="text-2xl w-min">Coaching grupal</span>
-            <img src="/images/arrowRight.svg" alt="" />
+            <div className="flex gap-6">
+              <span className="text-2xl">Mentoring</span>
+              <img src="/images/arrowRight.svg" alt="" />
+            </div>
           </div>
 
-          <div className="flex gap-4 items-center justify-between">
+          <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
             <img src="/images/group-24.svg" />
-            <span className="text-2xl w-min">Coaching social</span>
-            <img src="/images/arrowRight.svg" alt="" />
+            <div className="flex gap-6">
+              <span className="text-2xl">Liderazgo</span>
+              <img src="/images/arrowRight.svg" alt="" />
+            </div>
           </div>
         </div>
       </section>

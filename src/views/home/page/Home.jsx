@@ -11,7 +11,7 @@ const Home = () => {
         <Header />
       </div>
 
-      <div className="mb-28">
+      <div className="mb-28 lg:mb-24">
         <Founder />
       </div>
 
