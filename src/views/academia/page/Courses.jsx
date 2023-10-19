@@ -18,20 +18,27 @@ const Courses = () => {
 
   return (
     <>
-      <div className="photo flex items-end text-center">
-        <div className="flex flex-col items-center px-6 text-white gap-9 mb-16">
-          <h1 className="font-bold text-4xl">
-            Nuestra academia tiene lo indicado para ti y tu equipo
-          </h1>
+      <div className="relative flex flex-row-reverse mb-[124px]">
+        <div className="relative lg:w-1/2 md:w-full">
+          <img src="/images/rectangle-17.png" className="w-full" />
+          <div className="absolute bg-gradient-to-t from-[#024F3C] inset-0"></div>
+        </div>
 
-          <p>
-            Todo lo que ofrecemos esta diseñado para ayudarte a crear la mejor
-            versión de ti.
-          </p>
+        <div className="lg:relative absolute bottom-0 text-[#EFFFFB] lg:w-1/2 flex items-center">
+          <div className="w-[87%] lg:w-[75%] mx-auto text-center lg:text-start">
+            <h1 className="text-4xl font-bold mb-9 lg:text-[#024F3C] lg:text-6xl">
+              Nuestra academia tiene lo indicado para ti y tu equipo
+            </h1>
+
+            <p className="mb-4 lg:text-black lg:text-[28px]">
+              Todo lo que ofrecemos esta diseñado para ayudarte a crear la mejor
+              versión de ti.
+            </p>
+          </div>
         </div>
       </div>
 
-      <section className="px-6 flex flex-col mt-[120px]">
+      <section className="px-6 flex flex-col">
         {obtenerCursos.length === 0 ? (
           <Subtitles>Cargando Cursos...</Subtitles>
         ) : (

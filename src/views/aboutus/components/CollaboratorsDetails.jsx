@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Subtitles from "../../../components/Subtitles";
 
 const CollaboratorsDetails = () => {
   const [obtenerColaborador, setObtenerColaborador] = useState([]);
@@ -16,29 +17,35 @@ const CollaboratorsDetails = () => {
 
   return (
     <section>
-      <h2 className="text-[#024F3C] text-3xl font-bold px-7">
-        Conoce al equipo que te llevarán a lo más alto
-      </h2>
+      <div className="mb-8 md:mb-16 w-[87%] mx-auto">
+        <div className="md:w-[50%]">
+          <Subtitles>Conoce al equipo que te llevarán a lo más alto</Subtitles>
+        </div>
+      </div>
 
-      <img src="/images/rectangle-6.png" className="mt-8 mb-12" />
+      <img src="/images/rectangle-6.png" className="mb-12 md:hidden w-full" />
 
-      <div className="px-6 flex flex-col gap-14">
-        {obtenerColaborador.map((colaborador) => {
-          const { nombre, descripcion } = colaborador.attributes;
+      <div className="flex flex-col gap-14 w-[87%] mx-auto">
+        {obtenerColaborador.length === 0 ? (
+          <Subtitles>Loading...</Subtitles>
+        ) : (
+          obtenerColaborador.map((colaborador) => {
+            const { nombre, descripcion } = colaborador.attributes;
 
-          return (
-            <div key={colaborador.id} className="flex flex-col gap-4">
-              <img src="/images/rectangle-18.png" alt="" />
+            return (
+              <div key={colaborador.id} className="flex flex-col gap-4">
+                <img src="/images/rectangle-18.png" alt="" />
 
-              <div className="font-semibold">
-                <h3 className="text-2xl">{nombre}</h3>
-                <span>Consultor</span>
+                <div className="font-semibold">
+                  <h3 className="text-2xl">{nombre}</h3>
+                  <span>Consultor</span>
+                </div>
+
+                <p>{descripcion}</p>
               </div>
-
-              <p>{descripcion}</p>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import Subtitles from "../../../components/Subtitles";
 
 const ServicesCoach = () => {
   return (
-    <section className="w-[87%] mx-auto flex flex-col md:flex-row md:gap-16 gap-20 [&>div]:flex-1">
+    <section className="w-[87%] mx-auto flex flex-col lg:flex-row md:gap-16 gap-20 [&>div]:flex-1">
       <div className="flex flex-col justify-between gap-8">
         <div className="flex flex-col">
           <img
