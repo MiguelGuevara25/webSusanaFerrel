@@ -44,3 +44,10 @@ h1 {
   position: absolute;
   border-radius: 100%;
 }
+
+.papa {
+  background-image: url("/images/prueba.png");
+  background-position: 0% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

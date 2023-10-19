@@ -18,7 +18,7 @@ const Collaborators = () => {
 
   return (
     <>
-      <section className="flex flex-col gap-8">
+      <section className="flex flex-col gap-8 md:mb-40 mb-[86px]">
         <div className="flex flex-col gap-4 w-[87%] mx-auto">
           <Subtitles>Juntos lograremos tu mejor versión</Subtitles>
 
@@ -29,20 +29,39 @@ const Collaborators = () => {
           </p>
         </div>
 
+        <div className="hidden md:grid grid-cols-4 w-3/5 mx-auto gap-y-10">
+          {colaborador.map((colab) => {
+            const { nombre, cargo } = colab.attributes;
+
+            return (
+              <div
+                key={colab.id}
+                className="flex flex-col items-center gap-0.5"
+              >
+                <img src="/images/ellipse-13.svg" />
+                <span className="font-semibold text-center">{nombre}</span>
+                <span>{cargo}</span>
+              </div>
+            );
+          })}
+        </div>
+
         <Swiper
           slidesPerView={"auto"}
           className="mySwiper w-full text-xs"
           style={{ marginLeft: "24px" }}
         >
-          {colaborador.map((item) => {
+          {colaborador.map((colab) => {
+            const { nombre, cargo } = colab.attributes;
+
             return (
-              <SwiperSlide key={item.id} style={{ width: "140px" }}>
-                <div className="flex flex-col items-center gap-0.5">
+              <SwiperSlide key={colab.id} style={{ width: "140px" }}>
+                <div className="md:hidden flex flex-col items-center gap-0.5">
                   <img src="/images/ellipse-13.svg" />
                   <span className="font-semibold text-center">
-                    {item.attributes.nombre}
+                    {nombre}
                   </span>
-                  <span>Consultor</span>
+                  <span>{cargo}</span>
                 </div>
               </SwiperSlide>
             );
@@ -51,7 +70,7 @@ const Collaborators = () => {
       </section>
 
       {/* Sección 2 */}
-      <section className="mt-[86px] w-[87%] mx-auto mb-24">
+      <section className="w-[87%] mx-auto md:mb-[214px] mb-24">
         <Subtitles>
           3 formas de
           <br />
@@ -60,7 +79,7 @@ const Collaborators = () => {
 
         <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
           <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" width={342} />
+            <img src="/images/group-24.svg" className="md:w-80" />
             <div className="flex gap-6">
               <span className="text-2xl">Coaching</span>
               <img src="/images/arrowRight.svg" alt="" />
@@ -68,7 +87,7 @@ const Collaborators = () => {
           </div>
 
           <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" width={342} />
+            <img src="/images/group-24.svg" className="md:w-80" />
             <div className="flex gap-6">
               <span className="text-2xl">Mentoring</span>
               <img src="/images/arrowRight.svg" alt="" />
@@ -76,7 +95,7 @@ const Collaborators = () => {
           </div>
 
           <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" width={342} />
+            <img src="/images/group-24.svg" className="md:w-80" />
             <div className="flex gap-6">
               <span className="text-2xl">Liderazgo</span>
               <img src="/images/arrowRight.svg" alt="" />
