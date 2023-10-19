@@ -17,71 +17,93 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <Swiper
-      slidesPerView={"auto"}
-      spaceBetween={20}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Pagination]}
-      className="mySwiper flex gap-5 w-full [&>div>div]:mb-12 [&>div>span]:bg-[#128266]"
-    >
-      <SwiperSlide>
-        <section className="bg-[#E1F4F0] rounded-xl mx-6 text-[#024F3C] px-7 py-10">
-          <div className="text-center mb-9">
-            <h3 className="font-semibold mb-6 text-[13px]">
-              COACHING PERSONAL
-            </h3>
-            <p>
-              “Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-              elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-              malesuada sed ut elementum lacus.”
-            </p>
-          </div>
+    <>
+      <div className="lg:block hidden">
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={20}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper flex gap-5 w-full [&>div>div]:mb-12 [&>div>span]:bg-[#128266]"
+        >
+          {obtenerTestimonios.map((testimonial) => {
+            const { nombre, nombre_servicio, cargo, descripcion, imagen } =
+              testimonial.attributes;
+            const urlIMG =
+              import.meta.env.VITE_IMG_URL + imagen.data.attributes.url;
 
-          <div className="flex flex-col items-center gap-0.5">
-            <img src="/images/ellipse-13.svg" />
+            return (
+              <SwiperSlide key={testimonial.id}>
+                <section className="bg-[#E1F4F0] w-[87%] mx-auto rounded-xl text-[#024F3C] px-7 py-10">
+                  <div className="text-center mb-9">
+                    <h3 className="font-semibold mb-6 text-[13px] uppercase">
+                      {nombre_servicio}
+                    </h3>
+                    <p>&quot;{descripcion}&quot;</p>
+                  </div>
 
-            <span className="font-semibold text-center">Martin Avellaneda</span>
+                  <div className="flex flex-col items-center gap-0.5">
+                    <img
+                      src={urlIMG}
+                      className="w-[134px] h-[134px] rounded-full"
+                    />
 
-            <span className="text-[13px]">Consultor</span>
-          </div>
-        </section>
-      </SwiperSlide>
+                    <span className="font-semibold text-center">{nombre}</span>
 
-      {obtenerTestimonios.map((testimonial) => {
-        console.log(testimonial);
+                    <span className="text-[13px]">{cargo}</span>
+                  </div>
+                </section>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
 
-        const { nombre, nombre_servicio, cargo, descripcion, imagen } =
-          testimonial.attributes;
-        const urlIMG =
-          import.meta.env.VITE_IMG_URL + imagen.data.attributes.url;
+      <div className="lg:hidden block">
+        <Swiper
+          slidesPerView={"auto"}
+          spaceBetween={20}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper flex gap-5 w-full [&>div>div]:mb-12 [&>div>span]:bg-[#128266]"
+        >
+          {obtenerTestimonios.map((testimonial) => {
+            const { nombre, nombre_servicio, cargo, descripcion, imagen } =
+              testimonial.attributes;
+            const urlIMG =
+              import.meta.env.VITE_IMG_URL + imagen.data.attributes.url;
 
-        return (
-          <SwiperSlide key={testimonial.id}>
-            <section className="bg-[#E1F4F0] rounded-xl mx-6 text-[#024F3C] px-7 py-10">
-              <div className="text-center mb-9">
-                <h3 className="font-semibold mb-6 text-[13px] uppercase">
-                  {nombre_servicio}
-                </h3>
-                <p>&quot;{descripcion}&quot;</p>
-              </div>
+            return (
+              <SwiperSlide key={testimonial.id}>
+                <section className="bg-[#E1F4F0] w-[87%] mx-auto rounded-xl text-[#024F3C] px-7 py-10">
+                  <div className="text-center mb-9">
+                    <h3 className="font-semibold mb-6 text-[13px] uppercase">
+                      {nombre_servicio}
+                    </h3>
+                    <p>&quot;{descripcion}&quot;</p>
+                  </div>
 
-              <div className="flex flex-col items-center gap-0.5">
-                <img
-                  src={urlIMG}
-                  className="w-[134px] h-[134px] rounded-full"
-                />
+                  <div className="flex flex-col items-center gap-0.5">
+                    <img
+                      src={urlIMG}
+                      className="w-[134px] h-[134px] rounded-full"
+                    />
 
-                <span className="font-semibold text-center">{nombre}</span>
+                    <span className="font-semibold text-center">{nombre}</span>
 
-                <span className="text-[13px]">{cargo}</span>
-              </div>
-            </section>
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
+                    <span className="text-[13px]">{cargo}</span>
+                  </div>
+                </section>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    </>
   );
 };
 
