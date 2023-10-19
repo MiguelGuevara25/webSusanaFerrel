@@ -60,7 +60,7 @@ const Collaborators = () => {
 
         <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
           <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" />
+            <img src="/images/group-24.svg" width={342} />
             <div className="flex gap-6">
               <span className="text-2xl">Coaching</span>
               <img src="/images/arrowRight.svg" alt="" />
@@ -68,7 +68,7 @@ const Collaborators = () => {
           </div>
 
           <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" />
+            <img src="/images/group-24.svg" width={342} />
             <div className="flex gap-6">
               <span className="text-2xl">Mentoring</span>
               <img src="/images/arrowRight.svg" alt="" />
@@ -76,7 +76,7 @@ const Collaborators = () => {
           </div>
 
           <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" />
+            <img src="/images/group-24.svg" width={342} />
             <div className="flex gap-6">
               <span className="text-2xl">Liderazgo</span>
               <img src="/images/arrowRight.svg" alt="" />

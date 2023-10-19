@@ -22,3 +22,25 @@ h1 {
 .animationButton:hover {
   animation: pulse 1s infinite;
 }
+
+.bg__img__header {
+  background: linear-gradient(
+    155deg,
+    #ff8487 11.27%,
+    rgba(255, 255, 255, 0) 84.32%
+  );
+
+  position: absolute;
+  border-radius: 100%;
+}
+
+.bg__img__header2 {
+  background: linear-gradient(
+    323deg,
+    #ff5053 7.42%,
+    rgba(255, 255, 255, 0) 52.36%
+  );
+
+  position: absolute;
+  border-radius: 100%;
+}

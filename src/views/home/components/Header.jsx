@@ -2,37 +2,54 @@ import Button from "../../../components/Button";
 
 const Header = () => {
   return (
-    <header className="flex lg:flex-row-reverse flex-col w-[89%] mx-auto items-stretch">
-      <div className="lg:w-[57%] border-2 border-red-500 relative">
+    <header className="flex md:flex-row-reverse flex-col w-[87%] mx-auto">
+      <div className="md:w-1/2 relative h-[350px] md:h-[950px]">
         <img
           src="/images/photo1.png"
-          // className="rounded-full absolute md:left-28 right-28 -top-12"
-          className="rounded-full absolute right-0 -top-12 -z-10"
+          className="rounded-full absolute -left-24 -top-12 -z-20 md:hidden"
+          width={320}
           alt=""
         />
+        <div className="bg__img__header w-80 h-80 -z-10 -left-24 -top-12 md:hidden"></div>
+
+        <img
+          src="/images/photo1.png"
+          className="rounded-full absolute right-0 -top-12 -z-10 hidden md:block"
+          alt=""
+        />
+        <div className="bg__img__header w-[586.086px] h-[586.086px] -z-10 right-0 -top-12 hidden md:block"></div>
 
         <img
           src="/images/photo2.png"
-          className="rounded-full absolute -bottom-12 right-0"
-          // className="rounded-full absolute md:left-[330px] md:bottom-0 bottom-40"
+          className="rounded-full absolute right-0 bottom-0 -z-10 hidden md:block"
           alt=""
         />
+        <div className="bg__img__header2 w-[367px] h-[367px] right-0 bottom-0 hidden md:block"></div>
+
+        <img
+          src="/images/photo2.png"
+          className="rounded-full absolute -right-20 -bottom-10 -z-10 md:hidden"
+          width={200}
+          alt=""
+        />
+        <div className="bg__img__header2 w-[200px] h-[200px] -right-20 -bottom-10 md:hidden"></div>
       </div>
 
-      <div className="flex flex-col items-center lg:w-[43%] border-2 border-red-500">
-        <h1 className="lg:text-6xl text-4xl text-center lg:text-start font-bold text-[#024F3C] lg:mb-12 mb-9">
+      <div className="md:w-1/2 flex flex-col justify-center md:gap-12 gap-9">
+        <h1 className="text-[#024F3C] font-bold md:text-[64px] text-4xl md:text-start text-center md:leading-[72px]">
           Descubre tu fortaleza interna y toma las riendas de la vida que
           anhelas
         </h1>
 
-        <p className="lg:text-[28px] text-center lg:text-start lg:mb-28 mb-14">
+        <p className="md:text-3xl md:text-start text-center md:mb-16 mb-5">
           Te ayudamos a crear un ambiente ideal para el crecimiento personal y
           colectivo.
         </p>
 
-        <div className="self-center md:self-start lg:mb-16 mb-9">
+        <div className="mb-5">
           <Button>Conversemos</Button>
         </div>
+
         <img className="self-start" src="/images/arrowDown.svg" />
       </div>
     </header>
