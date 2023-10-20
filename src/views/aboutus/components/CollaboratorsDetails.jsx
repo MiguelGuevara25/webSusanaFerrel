@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Subtitles from "../../../components/Subtitles";
+import CollaboratorDetail from "./CollaboratorDetail";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const CollaboratorsDetails = () => {
   const [obtenerColaborador, setObtenerColaborador] = useState([]);
@@ -25,26 +27,50 @@ const CollaboratorsDetails = () => {
 
       <img src="/images/rectangle-6.png" className="mb-12 md:hidden w-full" />
 
-      <div className="flex flex-col gap-14 w-[87%] mx-auto">
-        {obtenerColaborador.length === 0 ? (
-          <Subtitles>Loading...</Subtitles>
-        ) : (
-          obtenerColaborador.map((colaborador) => {
-            const { nombre, descripcion } = colaborador.attributes;
+      {obtenerColaborador.length === 0 ? (
+        <div className="md:hidden flex w-[87%] mx-auto">
+          <Subtitles>Cargando Colaboradores...</Subtitles>
+        </div>
+      ) : (
+        <Swiper
+          slidesPerView={"auto"}
+          spaceBetween={86}
+          className="mySwiper w-full text-xs"
+          style={{ marginLeft: "100px" }}
+        >
+          {obtenerColaborador.map((colab) => {
+            const { imagen, nombre, cargo, funcion } = colab.attributes;
+            const urlIMG =
+              import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
 
             return (
-              <div key={colaborador.id} className="flex flex-col gap-4">
-                <img src="/images/rectangle-18.png" alt="" />
+              <SwiperSlide key={colab.id} style={{ width: "341px" }}>
+                <div className="hidden lg:flex flex-col">
+                <img
+                    src={urlIMG}
+                    className="h-[248px] object-cover rounded-xl w-full"
+                  />
+                  <span className="font-semibold text-2xl">{nombre}</span>
+                  <span className="font-semibold">{cargo}</span>
 
-                <div className="font-semibold">
-                  <h3 className="text-2xl">{nombre}</h3>
-                  <span>Consultor</span>
+                  <p>{funcion}</p>
                 </div>
-
-                <p>{descripcion}</p>
-              </div>
+              </SwiperSlide>
             );
-          })
+          })}
+        </Swiper>
+      )}
+
+      <div className="lg:hidden flex flex-col gap-14 w-[87%] mx-auto">
+        {obtenerColaborador.length === 0 ? (
+          <Subtitles>Cargando Colaboradores...</Subtitles>
+        ) : (
+          obtenerColaborador.map((colaborador) => (
+            <CollaboratorDetail
+              key={colaborador.id}
+              colaborador={colaborador}
+            />
+          ))
         )}
       </div>
     </section>
