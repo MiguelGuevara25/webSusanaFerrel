@@ -28,7 +28,7 @@ const CollaboratorsDetails = () => {
       <img src="/images/rectangle-6.png" className="mb-12 md:hidden w-full" />
 
       {obtenerColaborador.length === 0 ? (
-        <div className="md:hidden flex w-[87%] mx-auto">
+        <div className="hidden lg:flex w-[87%] mx-auto">
           <Subtitles>Cargando Colaboradores...</Subtitles>
         </div>
       ) : (
@@ -45,15 +45,15 @@ const CollaboratorsDetails = () => {
 
             return (
               <SwiperSlide key={colab.id} style={{ width: "341px" }}>
-                <div className="hidden lg:flex flex-col">
-                <img
+                <div className="hidden lg:flex flex-col mb-40">
+                  <img
                     src={urlIMG}
-                    className="h-[248px] object-cover rounded-xl w-full"
+                    className="h-[248px] object-cover rounded-xl w-full mb-6"
                   />
                   <span className="font-semibold text-2xl">{nombre}</span>
-                  <span className="font-semibold">{cargo}</span>
+                  <span className="font-semibold text-base mb-4">{cargo}</span>
 
-                  <p>{funcion}</p>
+                  <p className="text-base">{funcion}</p>
                 </div>
               </SwiperSlide>
             );
