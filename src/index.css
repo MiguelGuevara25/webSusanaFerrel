@@ -58,3 +58,10 @@ h1 {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+
+.descriptionEmergencies2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
