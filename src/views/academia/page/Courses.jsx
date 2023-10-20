@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../../../components/Button";
 import Subtitles from "../../../components/Subtitles";
+import Course from "../components/Course";
 
 const Courses = () => {
   const [obtenerCursos, setObtenerCursos] = useState([]);
@@ -18,7 +19,7 @@ const Courses = () => {
 
   return (
     <>
-      <div className="relative flex flex-row-reverse mb-[124px]">
+      <div className="relative flex flex-row-reverse lg:mb-[178px] mb-[121px]">
         <div className="relative lg:w-1/2 md:w-full">
           <img src="/images/rectangle-17.png" className="w-full" />
           <div className="absolute bg-gradient-to-t from-[#024F3C] inset-0"></div>
@@ -38,40 +39,20 @@ const Courses = () => {
         </div>
       </div>
 
-      <section className="px-6 flex flex-col">
+      <section className="w-[87%] mx-auto">
         {obtenerCursos.length === 0 ? (
           <Subtitles>Cargando Cursos...</Subtitles>
         ) : (
-          obtenerCursos.map((cursos) => {
-            const { imagen, descripcion, titulo } = cursos.attributes;
-            const urlIMG =
-              import.meta.env.VITE_IMG_URL + imagen.data.attributes.url;
-
-            return (
-              <div key={cursos.id} className="flex flex-col gap-8 mb-20">
-                <img
-                  src={urlIMG}
-                  alt={`Imagen del curso ${titulo}`}
-                  className="w-[341px] h-[248px] rounded-xl"
-                />
-
-                <div className="flex flex-col gap-4">
-                  <Subtitles>{titulo}</Subtitles>
-                  <p>{descripcion}</p>
-                </div>
-
-                <button className="flex text-[#2EB593] font-semibold gap-3 items-center">
-                  <p>Conocer más</p>
-                  <img src="/images/group-10.svg" width={25} alt="" />
-                </button>
-              </div>
-            );
-          })
+          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-[80px] place-items-center lg:mb-[120px] mb-20">
+            {obtenerCursos.map((curso) => (
+              <Course key={curso.id} curso={curso} />
+            ))}
+          </div>
         )}
 
-        <Button self="center" mb="10">
-          Mostrar más articulos
-        </Button>
+        <div className="flex justify-center lg:mb-40 mb-24">
+          <Button>Mostrar más articulos</Button>
+        </div>
       </section>
     </>
   );

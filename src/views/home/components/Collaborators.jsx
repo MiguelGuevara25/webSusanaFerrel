@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Subtitles from "../../../components/Subtitles";
+import Collaborator from "./Collaborator";
 
 const Collaborators = () => {
   const [colaborador, setColaborador] = useState([]);
@@ -29,44 +30,48 @@ const Collaborators = () => {
           </p>
         </div>
 
-        <div className="hidden md:grid grid-cols-4 w-3/5 mx-auto gap-y-10">
-          {colaborador.map((colab) => {
-            const { nombre, cargo } = colab.attributes;
+        {colaborador.length === 0 ? (
+          <div className="hidden md:block w-[87%] mx-auto">
+            <Subtitles>Cargando Colaboradores...</Subtitles>
+          </div>
+        ) : (
+          <div className="hidden md:grid grid-cols-4 w-3/5 mx-auto gap-y-10">
+            {colaborador.map((colab) => (
+              <Collaborator key={colab.id} colab={colab} />
+            ))}
+          </div>
+        )}
 
-            return (
-              <div
-                key={colab.id}
-                className="flex flex-col items-center gap-0.5"
-              >
-                <img src="/images/ellipse-13.svg" />
-                <span className="font-semibold text-center">{nombre}</span>
-                <span>{cargo}</span>
-              </div>
-            );
-          })}
-        </div>
+        {colaborador.length === 0 ? (
+          <div className="md:hidden flex w-[87%] mx-auto">
+            <Subtitles>Cargando Colaboradores...</Subtitles>
+          </div>
+        ) : (
+          <Swiper
+            slidesPerView={"auto"}
+            className="mySwiper w-full text-xs"
+            style={{ marginLeft: "24px" }}
+          >
+            {colaborador.map((colab) => {
+              const { imagen, nombre, cargo } = colab.attributes;
+              const urlIMG =
+                import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
 
-        <Swiper
-          slidesPerView={"auto"}
-          className="mySwiper w-full text-xs"
-          style={{ marginLeft: "24px" }}
-        >
-          {colaborador.map((colab) => {
-            const { nombre, cargo } = colab.attributes;
-
-            return (
-              <SwiperSlide key={colab.id} style={{ width: "140px" }}>
-                <div className="md:hidden flex flex-col items-center gap-0.5">
-                  <img src="/images/ellipse-13.svg" />
-                  <span className="font-semibold text-center">
-                    {nombre}
-                  </span>
-                  <span>{cargo}</span>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+              return (
+                <SwiperSlide key={colab.id} style={{ width: "140px" }}>
+                  <div className="md:hidden flex flex-col items-center gap-0.5">
+                    <img
+                      src={urlIMG}
+                      className="rounded-full h-32 w-32 object-cover"
+                    />
+                    <span className="font-semibold text-center">{nombre}</span>
+                    <span>{cargo}</span>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        )}
       </section>
 
       {/* Sección 2 */}

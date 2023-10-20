@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { IoCall, IoMail, IoLocationSharp } from "react-icons/io5";
 
 const Footer = () => {
+  const fecha = new Date();
+
   return (
     <footer className="bg-[#024F3C] py-14">
       <div className="w-[87%] mx-auto">
@@ -30,7 +32,7 @@ const Footer = () => {
 
             <div className="flex items-center gap-4">
               <IoCall />
-              <span>+51 931130017</span>
+              <span>+51 555 555 555</span>
             </div>
 
             <div className="flex items-center gap-4">
@@ -42,7 +44,7 @@ const Footer = () => {
 
         <section className="text-white flex md:flex-row-reverse flex-col md:items-center justify-between gap-9">
           <div className="">
-            <p>©2023 Susana Ferrel - Derechos reservados</p>
+            <p>©{fecha.getFullYear()} Susana Ferrel - Derechos reservados</p>
           </div>
 
           <div className="flex gap-4 [&>div]:bg-[#128266] [&>div]:rounded-full [&>div]:p-3 [&>div>img]:w-5 [&>div>img]:h-5">
