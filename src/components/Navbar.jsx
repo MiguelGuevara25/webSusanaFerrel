@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const fecha = new Date();
 
   const openModal = () => {
     setIsOpen(true);
@@ -51,7 +52,13 @@ const Navbar = () => {
           </div>
 
           <div className="lg:hidden">
-            <img onClick={openModal} className="w-8" src="/images/Icons.svg" />
+            <button>
+              <img
+                onClick={openModal}
+                className="w-8"
+                src="/images/Icons.svg"
+              />
+            </button>
           </div>
         </div>
       </nav>
@@ -63,18 +70,35 @@ const Navbar = () => {
           </div>
 
           <div className="text-3xl flex flex-col gap-10">
-            <h2>Inicio</h2>
-            <h2>Qué hacemos</h2>
-            <h2>Quiénes somos</h2>
-            <h2>Blog</h2>
-            <h2>Academia</h2>
-            <h2>Conversemos</h2>
+            <Link to="/" onClick={closeModal}>
+              <h2>Inicio</h2>
+            </Link>
+
+            <Link to="/servicios" onClick={closeModal}>
+              <h2>Qué hacemos</h2>
+            </Link>
+
+            <Link to="/nosotros" onClick={closeModal}>
+              <h2>Quiénes somos</h2>
+            </Link>
+
+            <Link to="/blog" onClick={closeModal}>
+              <h2>Blog</h2>
+            </Link>
+
+            <Link to="/academia" onClick={closeModal}>
+              <h2>Academia</h2>
+            </Link>
+
+            <Link to="/contacto" onClick={closeModal}>
+              <h2>Conversemos</h2>
+            </Link>
           </div>
 
           <section className="flex lg:flex-row-reverse flex-col lg:items-center justify-between gap-9">
             <div>
               <p className="text-white">
-                ©2023 Susana Ferrel - Derechos reservados
+                ©{fecha.getFullYear()} Susana Ferrel - Derechos reservados
               </p>
             </div>
 

@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import Button from "../../../components/Button";
-import Subtitles from "../../../components/Subtitles";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [post, setPost] = useState([]);
+  const [visibleElements, setVisibleElements] = useState(6);
+  const [showMore, setShowMore] = useState(false);
+
+  const postAnt = post.at(-1);
+  const urlIMG =
+    import.meta.env.VITE_IMG_URL +
+    postAnt?.attributes.imagen.data?.attributes.url;
 
   const getPost = async () => {
     const url = `${import.meta.env.VITE_API_URL}posts?populate=imagen`;
@@ -15,6 +22,16 @@ const Blog = () => {
   useEffect(() => {
     getPost();
   }, []);
+
+  const handleClick = () => {
+    if (showMore) {
+      setVisibleElements(6);
+      setShowMore(false);
+    } else {
+      setVisibleElements(post.length);
+      setShowMore(true);
+    }
+  };
 
   const formatearFecha = (fecha) => {
     const fechaNueva = new Date(fecha);
@@ -29,153 +46,79 @@ const Blog = () => {
 
   return (
     <div className="w-[87%] mx-auto">
-      {/* Blog Principal */}
-      {/* <div className="flex flex-col md:flex-row gap-4 border border-red-500 md:w-3/4 md:my-28 my-12">
-        <img src="/images/rectangle-18.png" className="relative" alt="" />
+      <div className="flex flex-col lg:flex-row lg:gap-14 gap-4 lg:w-9/12 lg:my-28 my-12">
+        <img
+          src={urlIMG}
+          className="relative object-cover rounded-xl w-full h-[248px]"
+          alt="Nuevo Blog"
+        />
 
         <p className="absolute text-white bg-[#2EB593] rounded-lg p-1.5 text-xs mt-3 ml-3">
           ¡NUEVO!
         </p>
 
-        <div>
+        <div className="">
           <div>
-            <span className="text-[13px]">CATEGORIA DE ARTÍCULO</span>
+            <span className="text-[13px] uppercase">
+              {postAnt?.attributes.categoria}
+            </span>
 
             <h2 className="text-[#024F3C] font-bold text-3xl">
-              Nombre de artículo máx 2 líneas
+              {postAnt?.attributes.titulo}
             </h2>
 
-            <span className="font-semibold text-[10px]">
-              12 SEPTIEMBRE, 2023
+            <span className="font-semibold text-[10px] uppercase">
+              {formatearFecha(postAnt?.attributes.publishedAt)}
             </span>
           </div>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-            elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-            malesuada sed ut elementum lacus.
+          <p className="descriptionEmergencies2 mb-8">
+            {postAnt?.attributes.descripcion}
           </p>
 
-          <button className="flex text-[#2EB593] font-semibold gap-3 items-center">
-            <p>Seguir Leyendo</p>
-            <img src="/images/group-10.svg" width={25} alt="" />
-          </button>
+          <Link to={`/post/${postAnt?.attributes.url}`}>
+            <button className="flex text-[#2EB593] font-semibold gap-3 items-center">
+              <p>Seguir Leyendo</p>
+              <img src="/images/group-10.svg" width={25} alt="" />
+            </button>
+          </Link>
         </div>
-      </div> */}
+      </div>
 
-      {post.map((postBlog) => {
-        const { imagen, titulo, descripcion, categoria, publishedAt } =
-          postBlog.attributes;
-        const urlIMG =
-          import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
+      <h3 className="text-2xl text-[#024F3C] mb-20">Más Recientes</h3>
 
-        return (
-          <div
-            key={postBlog.id}
-            className="flex flex-col md:flex-row md:gap-14 gap-4 md:w-8/12 md:my-28 my-12"
-          >
-            <img
-              src={urlIMG}
-              className="relative rounded-xl w-[341px] h-[248px]"
-              alt=""
-            />
+      <div className="md:grid md:grid-cols-2 lg:grid-cols-3 flex flex-col gap-20 place-items-center mb-[120px]">
+        {post.slice(0, visibleElements).map((postBlog) => {
+          const { titulo, imagen, categoria, publishedAt, descripcion } =
+            postBlog.attributes;
+          const urlIMG =
+            import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
 
-            <p className="absolute text-white bg-[#2EB593] rounded-lg p-1.5 text-xs mt-3 ml-3">
-              ¡NUEVO!
-            </p>
-
-            <div>
-              <div>
-                <span className="text-[13px] uppercase">{categoria}</span>
-
-                <h2 className="text-[#024F3C] font-bold text-3xl">{titulo}</h2>
-
-                <span className="font-semibold text-[10px] uppercase">
-                  {formatearFecha(publishedAt)}
-                </span>
+          return (
+            <div key={postBlog.id} className="w-[342px] h-[539px]">
+              <div className="h-[248px] mb-8">
+                <img src={urlIMG} className="rounded-xl w-full h-full" alt="" />
               </div>
 
-              <p className="descriptionEmergencies2">{descripcion}</p>
+              <span className="text-[13px] uppercase">{categoria}</span>
+              <h2 className="text-3xl font-bold text-[#024F3C] descriptionEmergencies3">
+                {titulo}
+              </h2>
 
-              <button className="flex text-[#2EB593] font-semibold gap-3 items-center">
-                <p>Seguir Leyendo</p>
-                <img src="/images/group-10.svg" width={25} alt="" />
-              </button>
+              <span className="text-[10px] font-semibold uppercase">
+                {formatearFecha(publishedAt)}
+              </span>
+
+              <p className="descriptionEmergencies2 mt-4 mb-8">{descripcion}</p>
+
+              <div className="w-1/2 border-b border-[#128266]"></div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
-      <h2 className="text-2xl">Más Recientes</h2>
-
-      {/* Más Recientes */}
-      <div className="flex flex-col gap-20 my-10">
-        {/* Post 1 */}
-        <div className="flex flex-col gap-4">
-          <img src="/images/rectangle-18.png" alt="" />
-
-          <div>
-            <span className="text-[13px]">CATEGORIA DE ARTÍCULO</span>
-            <Subtitles>Nombre de artículo máx 2 líneas</Subtitles>
-            <span className="font-semibold text-[10px]">
-              12 SEPTIEMBRE, 2023
-            </span>
-          </div>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-            elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-            malesuada sed ut elementum lacus.
-          </p>
-
-          <div className="border-b w-1/2 mt-2 border-[#128266]"></div>
-        </div>
-
-        {/* Post 2 */}
-        <div className="flex flex-col gap-4">
-          <img src="/images/rectangle-18.png" alt="" />
-
-          <div>
-            <span className="text-[13px]">CATEGORIA DE ARTÍCULO</span>
-            <Subtitles>Nombre de artículo máx 2 líneas</Subtitles>
-            <span className="font-semibold text-[10px]">
-              12 SEPTIEMBRE, 2023
-            </span>
-          </div>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-            elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-            malesuada sed ut elementum lacus.
-          </p>
-
-          <div className="border-b w-1/2 mt-2 border-[#128266]"></div>
-        </div>
-
-        {/* Post 3 */}
-        <div className="flex flex-col gap-4">
-          <img src="/images/rectangle-18.png" alt="" />
-
-          <div>
-            <span className="text-[13px]">CATEGORIA DE ARTÍCULO</span>
-            <Subtitles>Nombre de artículo máx 2 líneas</Subtitles>
-            <span className="font-semibold text-[10px]">
-              12 SEPTIEMBRE, 2023
-            </span>
-          </div>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Habitasse mauris diam hac
-            elementum. Arcu dignissim duis auctor faucibus eleifend arcu. Amet
-            malesuada sed ut elementum lacus.
-          </p>
-
-          <div className="border-b w-1/2 mt-2 border-[#128266]"></div>
-        </div>
-
-        <Button self="center" mb="10">
-          Cargar más articulos
-        </Button>
+      <div className="flex justify-center mb-40" onClick={handleClick}>
+        <Button>{showMore ? "Mostrar menos" : "Cargar más articulos"}</Button>
       </div>
     </div>
   );

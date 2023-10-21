@@ -6,6 +6,7 @@ import Blog from "./views/blog/page/Blog";
 import AboutUs from "./views/aboutus/page/AboutUs";
 import Contact from "./views/contact/page/Contact";
 import Courses from "./views/academia/page/Courses";
+import PostDetails from "./views/blog/page/PostDetails";
 
 const router = createBrowserRouter([
   {
@@ -43,9 +44,14 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/post/:url",
+        element: <PostDetails />,
+      },
+
+      {
         path: "*",
         element: <h1>404</h1>,
-      }
+      },
     ],
   },
 ]);
