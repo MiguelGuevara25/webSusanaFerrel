@@ -72,3 +72,7 @@ h1 {
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+.fondoSusana {
+  background: linear-gradient(0deg, #024f3c 0.19%, rgba(2, 79, 60, 0) 50.03%);
+}

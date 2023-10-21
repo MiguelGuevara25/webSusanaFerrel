@@ -47,7 +47,7 @@ const PostDetails = () => {
         src={`${import.meta.env.VITE_IMG_URL}${
           postDetails.imagen?.data.attributes.url
         }`}
-        className="mb-16"
+        className="md:mb-16 md:mt-9 my-10"
       />
 
       <p className="mb-16">{postDetails.descripcion}</p>

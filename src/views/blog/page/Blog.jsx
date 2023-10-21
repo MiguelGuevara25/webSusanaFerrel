@@ -89,16 +89,22 @@ const Blog = () => {
 
       <div className="md:grid md:grid-cols-2 lg:grid-cols-3 flex flex-col gap-20 place-items-center mb-[120px]">
         {post.slice(0, visibleElements).map((postBlog) => {
-          const { titulo, imagen, categoria, publishedAt, descripcion } =
+          const { titulo, imagen, categoria, publishedAt, descripcion, url } =
             postBlog.attributes;
           const urlIMG =
             import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
 
           return (
             <div key={postBlog.id} className="w-[342px] h-[539px]">
-              <div className="h-[248px] mb-8">
-                <img src={urlIMG} className="rounded-xl w-full h-full" alt="" />
-              </div>
+              <Link to={`/post/${url}`}>
+                <div className="h-[248px] mb-8">
+                  <img
+                    src={urlIMG}
+                    className="rounded-xl w-full h-full"
+                    alt=""
+                  />
+                </div>
+              </Link>
 
               <span className="text-[13px] uppercase">{categoria}</span>
               <h2 className="text-3xl font-bold text-[#024F3C] descriptionEmergencies3">

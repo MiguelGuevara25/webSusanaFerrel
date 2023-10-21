@@ -20,7 +20,9 @@ const Navbar = () => {
       <nav className="py-6 bg-white text-[#024F3C]">
         <div className="flex justify-between items-center w-[87%] mx-auto">
           <div className="flex">
-            <img src="/images/logoFerrel.svg" />
+            <Link to="/">
+              <img src="/images/logoFerrel.svg" />
+            </Link>
           </div>
 
           <div className="lg:flex gap-14 font-medium hidden">

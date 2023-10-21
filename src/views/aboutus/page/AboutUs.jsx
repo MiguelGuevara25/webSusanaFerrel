@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className="relative flex lg:flex-row-reverse flex-col mb-20">
         <div className="relative lg:w-1/2 md:w-full">
           <img src="/images/photoSusana.png" className="w-full" />
-          <div className="absolute bg-gradient-to-t from-[#024F3C] inset-0"></div>
+          <div className="absolute fondoSusana inset-0"></div>
         </div>
 
         <div className="lg:w-1/2 flex items-center">
