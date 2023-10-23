@@ -1,21 +1,11 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Subtitles from "../../../components/Subtitles";
 import Collaborator from "./Collaborator";
+import EmpowerForms from "../../../components/EmpowerForms";
+import useCollaborators from "../../../hooks/useCollaborators";
 
 const Collaborators = () => {
-  const [colaborador, setColaborador] = useState([]);
-
-  const getColaborador = async () => {
-    const url = `${import.meta.env.VITE_API_URL}trabajadores?populate=imagen`;
-    const res = await fetch(url);
-    const data = await res.json();
-    setColaborador(data.data);
-  };
-
-  useEffect(() => {
-    getColaborador();
-  }, []);
+  const { colaborador } = useCollaborators();
 
   return (
     <>
@@ -83,29 +73,11 @@ const Collaborators = () => {
         </Subtitles>
 
         <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
-          <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" className="md:w-80" />
-            <div className="flex gap-6">
-              <span className="text-2xl">Coaching</span>
-              <img src="/images/arrowRight.svg" alt="" />
-            </div>
-          </div>
+          <EmpowerForms srcImg="/images/group-24.svg">Coaching</EmpowerForms>
 
-          <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" className="md:w-80" />
-            <div className="flex gap-6">
-              <span className="text-2xl">Mentoring</span>
-              <img src="/images/arrowRight.svg" alt="" />
-            </div>
-          </div>
+          <EmpowerForms srcImg="/images/group-24.svg">Mentoring</EmpowerForms>
 
-          <div className="flex md:flex-col gap-4 md:gap-12 items-center justify-between">
-            <img src="/images/group-24.svg" className="md:w-80" />
-            <div className="flex gap-6">
-              <span className="text-2xl">Liderazgo</span>
-              <img src="/images/arrowRight.svg" alt="" />
-            </div>
-          </div>
+          <EmpowerForms srcImg="/images/group-24.svg">Liderazgo</EmpowerForms>
         </div>
       </section>
     </>

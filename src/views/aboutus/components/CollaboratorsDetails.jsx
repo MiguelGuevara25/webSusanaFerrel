@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react";
 import Subtitles from "../../../components/Subtitles";
 import CollaboratorDetail from "./CollaboratorDetail";
 import { Swiper, SwiperSlide } from "swiper/react";
+import useCollaborators from "../../../hooks/useCollaborators";
 
 const CollaboratorsDetails = () => {
-  const [obtenerColaborador, setObtenerColaborador] = useState([]);
-
-  const getColaborador = async () => {
-    const url = `${import.meta.env.VITE_API_URL}trabajadores?populate=imagen`;
-    const res = await fetch(url);
-    const data = await res.json();
-    setObtenerColaborador(data.data);
-  };
-
-  useEffect(() => {
-    getColaborador();
-  }, []);
+  const { colaborador } = useCollaborators();
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <div className="mb-8 md:mb-16 w-[87%] mx-auto">
         <div className="md:w-[50%]">
           <Subtitles>Conoce al equipo que te llevarán a lo más alto</Subtitles>
@@ -27,7 +16,7 @@ const CollaboratorsDetails = () => {
 
       <img src="/images/rectangle-6.png" className="mb-12 md:hidden w-full" />
 
-      {obtenerColaborador.length === 0 ? (
+      {colaborador.length === 0 ? (
         <div className="hidden lg:flex w-[87%] mx-auto">
           <Subtitles>Cargando Colaboradores...</Subtitles>
         </div>
@@ -38,7 +27,7 @@ const CollaboratorsDetails = () => {
           className="mySwiper w-full text-xs"
           style={{ marginLeft: "100px" }}
         >
-          {obtenerColaborador.map((colab) => {
+          {colaborador.map((colab) => {
             const { imagen, nombre, cargo, funcion } = colab.attributes;
             const urlIMG =
               import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
@@ -62,10 +51,10 @@ const CollaboratorsDetails = () => {
       )}
 
       <div className="lg:hidden flex flex-col gap-14 w-[87%] mx-auto">
-        {obtenerColaborador.length === 0 ? (
+        {colaborador.length === 0 ? (
           <Subtitles>Cargando Colaboradores...</Subtitles>
         ) : (
-          obtenerColaborador.map((colaborador) => (
+          colaborador.map((colaborador) => (
             <CollaboratorDetail
               key={colaborador.id}
               colaborador={colaborador}

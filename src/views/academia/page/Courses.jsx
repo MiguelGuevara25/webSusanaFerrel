@@ -1,21 +1,10 @@
-import { useEffect, useState } from "react";
 import Button from "../../../components/Button";
 import Subtitles from "../../../components/Subtitles";
+import useCourse from "../../../hooks/useCourse";
 import Course from "../components/Course";
 
 const Courses = () => {
-  const [obtenerCursos, setObtenerCursos] = useState([]);
-
-  const getCursos = async () => {
-    const url = `${import.meta.env.VITE_API_URL}cursos?populate=imagen`;
-    const res = await fetch(url);
-    const data = await res.json();
-    setObtenerCursos(data.data);
-  };
-
-  useEffect(() => {
-    getCursos();
-  }, []);
+  const { obtenerCursos } = useCourse();
 
   return (
     <>
