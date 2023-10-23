@@ -2,7 +2,7 @@ import Button from "../../../components/Button";
 
 const Header = () => {
   return (
-    <header className="flex lg:flex-row-reverse flex-col w-[87%] mx-auto">
+    <header className="flex lg:flex-row-reverse flex-col lg:w-[87%] mx-auto overflow-hidden">
       <div className="lg:w-1/2 relative h-[350px] lg:h-[950px]">
         <img
           src="/images/photo1.png"
@@ -35,7 +35,7 @@ const Header = () => {
         <div className="bg__img__header2 w-[200px] h-[200px] -right-20 -bottom-10 lg:hidden"></div>
       </div>
 
-      <div className="lg:w-1/2 flex flex-col justify-center lg:gap-12 gap-9">
+      <div className="lg:w-1/2 flex flex-col justify-center lg:gap-12 gap-9 w-[87%] mx-auto">
         <h1 className="text-[#024F3C] font-bold lg:text-[64px] text-4xl lg:text-start text-center lg:leading-[72px]">
           Descubre tu fortaleza interna y toma las riendas de la vida que
           anhelas
@@ -46,7 +46,7 @@ const Header = () => {
           colectivo.
         </p>
 
-        <div className="mb-5">
+        <div className="mb-5 self-center lg:self-start">
           <Button>Conversemos</Button>
         </div>
 

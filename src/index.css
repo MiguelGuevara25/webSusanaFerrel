@@ -76,3 +76,23 @@ h1 {
 .fondoSusana {
   background: linear-gradient(0deg, #024f3c 0.19%, rgba(2, 79, 60, 0) 50.03%);
 }
+
+.effect__hover {
+  position: relative;
+  text-decoration: none;
+}
+
+.effect__hover::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #024f3c;
+  bottom: -1.8px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.effect__hover:hover::after {
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import Button from "./Button";
 import { useState } from "react";
@@ -6,6 +6,7 @@ import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const fecha = new Date();
+  const location = useLocation();
 
   const openModal = () => {
     setIsOpen(true);
@@ -27,23 +28,56 @@ const Navbar = () => {
 
           <div className="lg:flex gap-14 font-medium hidden">
             <Link to="/">
-              <span>Inicio</span>
+              <span
+                className={`effect__hover ${
+                  location.pathname === "/" && "border-b-2 border-[#024F3C]"
+                }`}
+              >
+                Inicio
+              </span>
             </Link>
 
             <Link to="/servicios">
-              <span>Qué hacemos</span>
+              <span
+                className={`effect__hover ${
+                  location.pathname === "/servicios" &&
+                  "border-b-2 border-[#024F3C]"
+                }`}
+              >
+                Qué hacemos
+              </span>
             </Link>
 
             <Link to="/nosotros">
-              <span>Quiénes somos</span>
+              <span
+                className={`effect__hover ${
+                  location.pathname === "/nosotros" &&
+                  "border-b-2 border-[#024F3C]"
+                }`}
+              >
+                Quiénes somos
+              </span>
             </Link>
 
             <Link to="/blog">
-              <span>Blog</span>
+              <span
+                className={`effect__hover ${
+                  location.pathname === "/blog" && "border-b-2 border-[#024F3C]"
+                }`}
+              >
+                Blog
+              </span>
             </Link>
 
             <Link to="/academia">
-              <span>Academia</span>
+              <span
+                className={`effect__hover ${
+                  location.pathname === "/academia" &&
+                  "border-b-2 border-[#024F3C]"
+                }`}
+              >
+                Academia
+              </span>
             </Link>
           </div>
 

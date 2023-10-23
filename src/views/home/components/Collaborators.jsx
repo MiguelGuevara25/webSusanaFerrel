@@ -19,7 +19,7 @@ const Collaborators = () => {
 
   return (
     <>
-      <section className="flex flex-col gap-8 md:mb-40 mb-[86px]">
+      <section className="flex flex-col gap-8 md:mb-40 mb-[86px] overflow-hidden">
         <div className="flex flex-col gap-4 w-[87%] mx-auto">
           <Subtitles>Juntos lograremos tu mejor versión</Subtitles>
 
