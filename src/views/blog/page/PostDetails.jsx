@@ -62,7 +62,7 @@ const PostDetails = () => {
           width={25}
           alt=""
         />
-        <p>Seguir Leyendo</p>
+        <p>Regresar</p>
       </button>
     </div>
   );
