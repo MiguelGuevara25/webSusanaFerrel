@@ -73,11 +73,17 @@ const Collaborators = () => {
         </Subtitles>
 
         <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
-          <EmpowerForms srcImg="/images/group-24.svg">Coaching</EmpowerForms>
+          <EmpowerForms srcImg="/images/ilus_Coaching.svg">
+            Coaching
+          </EmpowerForms>
 
-          <EmpowerForms srcImg="/images/group-24.svg">Mentoring</EmpowerForms>
+          <EmpowerForms srcImg="/images/ilus_Mentoring.svg">
+            Mentoring
+          </EmpowerForms>
 
-          <EmpowerForms srcImg="/images/group-24.svg">Liderazgo</EmpowerForms>
+          <EmpowerForms srcImg="/images/ilus_Liderazgo.svg">
+            Liderazgo
+          </EmpowerForms>
         </div>
       </section>
     </>

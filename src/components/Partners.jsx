@@ -9,19 +9,37 @@ const Partners = () => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-10 grid-cols-3 w-[87%] mx-auto place-items-center lg:gap-0 gap-6">
-        <img src="/images/entel.svg" className="lg:col-span-2" />
-        <img src="/images/alicorp.svg" className="lg:col-span-2" />
-        <img src="/images/calidda.svg" className="lg:col-span-2" />
-        <img src="/images/ingram.svg" className="lg:col-span-2" />
-        <img src="/images/kavak.svg" className="lg:col-span-2" />
-        <img src="/images/kpmg.svg" className="lg:col-start-2 lg:col-end-4" />
+      <div className="relative">
+        <div className="grid lg:grid-cols-10 grid-cols-3 w-[87%] mx-auto place-items-center lg:gap-0 gap-6">
+          <img src="/images/entel.svg" className="lg:col-span-2" />
+          <img src="/images/alicorp.svg" className="lg:col-span-2" />
+          <img src="/images/calidda.svg" className="lg:col-span-2" />
+          <img src="/images/ingram.svg" className="lg:col-span-2" />
+          <img src="/images/kavak.svg" className="lg:col-span-2" />
+          <img src="/images/kpmg.svg" className="lg:col-start-2 lg:col-end-4" />
+          <img
+            src="/images/laureate.svg"
+            className="lg:col-start-4 lg:col-end-6"
+          />
+          <img
+            src="/images/backus.svg"
+            className="lg:col-start-6 lg:col-end-8"
+          />
+          <img
+            src="/images/roche.svg"
+            className="lg:col-start-8 lg:col-end-10"
+          />
+        </div>
+
         <img
-          src="/images/laureate.svg"
-          className="lg:col-start-4 lg:col-end-6"
+          src="images/Bg_logos_Desktop.svg"
+          className="md:block hidden absolute -bottom-16 -z-20"
         />
-        <img src="/images/backus.svg" className="lg:col-start-6 lg:col-end-8" />
-        <img src="/images/roche.svg" className="lg:col-start-8 lg:col-end-10" />
+
+        <img
+          src="images/Bg_logos_Mobile.svg"
+          className="md:hidden block absolute -bottom-14 -z-20"
+        />
       </div>
     </section>
   );

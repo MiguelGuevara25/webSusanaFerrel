@@ -8,6 +8,7 @@ const Servicios = () => {
       <div className="relative flex flex-row-reverse">
         <div className="relative lg:w-1/2 md:w-full">
           <img src="/images/rectangle-17.png" className="w-full" />
+
           <div className="absolute bg-gradient-to-t from-[#024F3C] inset-0"></div>
         </div>
 

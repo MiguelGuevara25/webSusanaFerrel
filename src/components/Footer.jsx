@@ -12,12 +12,12 @@ const Footer = () => {
             <p className="text-[#81FDDE]">Inicio</p>
           </Link>
 
-          <Link to="/nosotros">
-            <p className="text-[#81FDDE]">Nosotros</p>
+          <Link to="/servicios">
+            <p className="text-[#81FDDE]">Qué hacemos</p>
           </Link>
 
-          <Link to="/contacto">
-            <p className="text-[#81FDDE]">Contacto</p>
+          <Link to="/nosotros">
+            <p className="text-[#81FDDE]">Quiénes somos</p>
           </Link>
         </section>
 
