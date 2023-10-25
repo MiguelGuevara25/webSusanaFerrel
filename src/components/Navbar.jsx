@@ -10,17 +10,17 @@ const Navbar = () => {
 
   const openModal = () => {
     setIsOpen(true);
-    document.body.classList.add('no-scroll');
+    document.body.classList.add("no-scroll");
   };
 
   const closeModal = () => {
     setIsOpen(false);
-    document.body.classList.remove('no-scroll');
+    document.body.classList.remove("no-scroll");
   };
 
   return (
     <div className="relative">
-      <nav className="py-6 bg-white text-[#024F3C]">
+      <nav className="lg:py-6 py-3 bg-white text-[#024F3C]">
         <div className="flex justify-between items-center w-[87%] mx-auto">
           <div className="flex">
             <Link to="/">
@@ -90,13 +90,7 @@ const Navbar = () => {
           </div>
 
           <div className="lg:hidden">
-            <button>
-              <img
-                onClick={openModal}
-                className="w-8"
-                src="/images/Icons.svg"
-              />
-            </button>
+            <img onClick={openModal} className="w-8" src="/images/Icons.svg" />
           </div>
         </div>
       </nav>

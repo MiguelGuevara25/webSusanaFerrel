@@ -6,7 +6,7 @@ const ServicesCoach = () => {
       <div className="flex flex-col justify-between gap-8">
         <div className="flex flex-col">
           <img
-            src="/images/group-24.svg"
+            src="/images/ilus_Coaching.svg"
             width={245}
             className="mb-12 self-center"
             alt=""
@@ -31,7 +31,7 @@ const ServicesCoach = () => {
       <div className="flex flex-col justify-between gap-8">
         <div className="flex flex-col">
           <img
-            src="/images/group-24.svg"
+            src="/images/ilus_Mentoring.svg"
             width={245}
             className="mb-12 self-center"
             alt=""
@@ -55,7 +55,7 @@ const ServicesCoach = () => {
       <div className="flex flex-col justify-between gap-8">
         <div className="flex flex-col">
           <img
-            src="/images/group-24.svg"
+            src="/images/ilus_Liderazgo.svg"
             width={245}
             className="mb-12 self-center"
             alt=""

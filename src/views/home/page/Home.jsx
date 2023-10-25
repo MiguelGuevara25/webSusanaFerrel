@@ -1,7 +1,6 @@
 import Button from "../../../components/Button";
 import Founder from "../../../components/Founder";
 import Partners from "../../../components/Partners";
-import Subtitles from "../../../components/Subtitles";
 import Collaborators from "../components/Collaborators";
 import Header from "../components/Header";
 
@@ -24,11 +23,11 @@ const Home = () => {
 
       <div className="flex flex-col w-[87%] mx-auto items-center text-center lg:mb-40 mb-24">
         <div className="mb-9">
-          <Subtitles>
+          <h2 className="text-[#024F3C] font-bold lg:text-[42px] text-[36px] lg:leading-[47px] leading-10">
             Conviértete en la
             <br />
             mejor versión de ti
-          </Subtitles>
+          </h2>
         </div>
 
         <p className="md:mb-16 mb-14">

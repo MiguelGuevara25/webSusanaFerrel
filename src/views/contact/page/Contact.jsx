@@ -3,9 +3,9 @@ import Button from "../../../components/Button";
 const Contact = () => {
   return (
     <div className="w-[87%] lg:w-8/12 mx-auto">
-      <img src="/images/group-33.svg" className="my-14" />
+      <img src="/images/capa-1.svg" className="my-14" />
 
-      <h2 className="text-[#024F3C] font-semibold text-2xl">
+      <h2 className="text-[#024F3C] font-bold text-2xl">
         ¿Cómo te podemos ayudar?
       </h2>
 
