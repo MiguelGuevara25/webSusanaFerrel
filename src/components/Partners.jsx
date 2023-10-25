@@ -33,12 +33,12 @@ const Partners = () => {
 
         <img
           src="images/Bg_logos_Desktop.svg"
-          className="md:block hidden absolute -bottom-16 -z-20"
+          className="md:block hidden absolute -bottom-16 w-full -z-20"
         />
 
         <img
           src="images/Bg_logos_Mobile.svg"
-          className="md:hidden block absolute -bottom-14 -z-20"
+          className="md:hidden block absolute -bottom-14 w-full -z-20"
         />
       </div>
     </section>

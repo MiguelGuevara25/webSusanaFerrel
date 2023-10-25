@@ -47,18 +47,30 @@ const Footer = () => {
             <p>©{fecha.getFullYear()} Susana Ferrel - Derechos reservados</p>
           </div>
 
-          <div className="flex gap-4 [&>div]:bg-[#128266] [&>div]:rounded-full [&>div]:p-3 [&>div>img]:w-5 [&>div>img]:h-5">
-            <div>
+          <div className="flex gap-4 [&>a]:bg-[#128266] [&>a]:rounded-full [&>a]:p-3 [&>a>img]:w-5 [&>a>img]:h-5">
+            <a
+              href="https://www.linkedin.com/in/suferrel/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="/images/linkedin.svg" />
-            </div>
+            </a>
 
-            <div>
+            <a
+              href="https://www.instagram.com/sueferrel"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="/images/instagram.svg" />
-            </div>
+            </a>
 
-            <div>
+            <a
+              href="https://www.facebook.com/susanaferrelcoach/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="/images/facebook.svg" />
-            </div>
+            </a>
           </div>
         </section>
       </div>
