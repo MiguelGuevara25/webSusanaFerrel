@@ -46,7 +46,7 @@ const Header = () => {
           colectivo.
         </p>
 
-        <div className="mb-5 self-center lg:self-start">
+        <div className="mb-5 self-center lg:self-start ml-1">
           <Button>Conversemos</Button>
         </div>
 

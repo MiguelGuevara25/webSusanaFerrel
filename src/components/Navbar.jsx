@@ -19,8 +19,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative">
-      <nav className="lg:py-6 py-3 bg-white text-[#024F3C]">
+    <div className="">
+      <nav className="lg:py-6 py-3 bg-white text-[#024F3C] fixed w-full z-30 shadow-lg">
         <div className="flex justify-between items-center w-[87%] mx-auto">
           <div className="flex">
             <Link to="/">
@@ -95,7 +95,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {isOpen && (
+      {/* {isOpen && (
         <div className="bg-[#024F3C] text-[#81FDDE] h-screen absolute inset-0 z-20 p-6 flex flex-col justify-between">
           <div className="flex justify-end">
             <img onClick={closeModal} className="w-8" src="/images/close.svg" />
@@ -149,7 +149,7 @@ const Navbar = () => {
             </div>
           </section>
         </div>
-      )}
+      )} */}
 
       <Outlet />
 

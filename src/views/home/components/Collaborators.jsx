@@ -9,7 +9,7 @@ const Collaborators = () => {
 
   return (
     <>
-      <section className="flex flex-col gap-8 md:mb-40 mb-[86px] overflow-hidden">
+      <section className="flex flex-col gap-8 lg:mb-40 mb-[86px] overflow-hidden">
         <div className="flex flex-col gap-4 w-[87%] mx-auto">
           <Subtitles>Juntos lograremos tu mejor versión</Subtitles>
 
@@ -20,19 +20,19 @@ const Collaborators = () => {
           </p>
         </div>
 
-        {colaborador.length === 0 ? (
+        {colaborador?.length === 0 ? (
           <div className="hidden md:block w-[87%] mx-auto">
             <Subtitles>Cargando Colaboradores...</Subtitles>
           </div>
         ) : (
-          <div className="hidden md:grid grid-cols-4 w-3/5 mx-auto gap-y-10">
+          <div className="hidden lg:grid grid-cols-4 w-3/5 mx-auto gap-y-10">
             {colaborador.map((colab) => (
               <Collaborator key={colab.id} colab={colab} />
             ))}
           </div>
         )}
 
-        {colaborador.length === 0 ? (
+        {colaborador?.length === 0 ? (
           <div className="md:hidden flex w-[87%] mx-auto">
             <Subtitles>Cargando Colaboradores...</Subtitles>
           </div>
@@ -49,7 +49,7 @@ const Collaborators = () => {
 
               return (
                 <SwiperSlide key={colab.id} style={{ width: "140px" }}>
-                  <div className="md:hidden flex flex-col items-center gap-0.5">
+                  <div className="lg:hidden flex flex-col items-center gap-0.5">
                     <img
                       src={urlIMG}
                       className="rounded-full h-32 w-32 object-cover"

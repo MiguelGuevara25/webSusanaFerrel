@@ -7,7 +7,7 @@ const Courses = () => {
   const { obtenerCursos } = useCourse();
 
   return (
-    <>
+    <div className="lg:pt-[100px] pt-14">
       <div className="relative flex flex-row-reverse lg:mb-[178px] mb-[121px]">
         <div className="relative lg:w-1/2 md:w-full">
           <img src="/images/rectangle-17.png" className="w-full" />
@@ -43,7 +43,7 @@ const Courses = () => {
           <Button>Mostrar más articulos</Button>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

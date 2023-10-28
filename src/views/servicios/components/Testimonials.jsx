@@ -9,7 +9,7 @@ const Testimonials = () => {
     const url = `${import.meta.env.VITE_API_URL}testimonios?populate=imagen`;
     const res = await fetch(url);
     const data = await res.json();
-    setObtenerTestimonios(data.data);
+    setObtenerTestimonios(data?.data);
   };
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Testimonials = () => {
 
   return (
     <>
-      <div className="lg:block hidden">
+      <div className="lg:block hidden w-[87%] mx-auto">
         <Swiper
           slidesPerView={3}
           spaceBetween={20}
@@ -86,7 +86,9 @@ const Testimonials = () => {
                     <h3 className="font-semibold mb-6 text-[13px] uppercase">
                       {nombre_servicio}
                     </h3>
-                    <p className="descriptionEmergencies2">&quot;{descripcion}&quot;</p>
+                    <p className="descriptionEmergencies2">
+                      &quot;{descripcion}&quot;
+                    </p>
                   </div>
 
                   <div className="flex flex-col items-center gap-0.5">

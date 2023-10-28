@@ -3,7 +3,7 @@ import Courses from "../components/Courses";
 
 const AboutUs = () => {
   return (
-    <>
+    <div className="lg:pt-[100px] pt-14">
       <div className="relative flex lg:flex-row-reverse flex-col mb-20">
         <div className="relative lg:w-1/2 md:w-full">
           <img src="/images/photoSusana.png" className="w-full" />
@@ -38,7 +38,7 @@ const AboutUs = () => {
       </div>
 
       <CollaboratorsDetails />
-    </>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import Testimonials from "../components/Testimonials";
 
 const Servicios = () => {
   return (
-    <>
+    <div className="lg:pt-20 pt-14">
       <div className="relative flex flex-row-reverse">
         <div className="relative lg:w-1/2 md:w-full">
           <img src="/images/rectangle-17.png" className="w-full" />
@@ -37,7 +37,7 @@ const Servicios = () => {
       <div className="mb-24">
         <Testimonials />
       </div>
-    </>
+    </div>
   );
 };
 

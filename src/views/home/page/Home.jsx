@@ -6,7 +6,7 @@ import Header from "../components/Header";
 
 const Home = () => {
   return (
-    <>
+    <div className="lg:pt-20 pt-14">
       <div className="mb-5">
         <Header />
       </div>
@@ -38,7 +38,7 @@ const Home = () => {
 
         <Button>Empieza tu consultoría</Button>
       </div>
-    </>
+    </div>
   );
 };
 
