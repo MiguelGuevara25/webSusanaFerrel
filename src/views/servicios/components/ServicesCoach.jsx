@@ -24,7 +24,12 @@ const ServicesCoach = () => {
 
         <button className="flex text-[#2EB593] font-semibold items-center gap-3 ">
           <p>Empecemos hoy</p>
-          <img src="/images/group-10.svg" width={25} alt="" />
+          <img
+            src="/images/group-10.svg"
+            className="animationButton2"
+            width={25}
+            alt=""
+          />
         </button>
       </div>
 
@@ -48,7 +53,12 @@ const ServicesCoach = () => {
 
         <button className="flex text-[#2EB593] font-semibold items-center gap-3">
           <p>Empecemos hoy</p>
-          <img src="/images/group-10.svg" width={25} alt="" />
+          <img
+            src="/images/group-10.svg"
+            className="animationButton2"
+            width={25}
+            alt=""
+          />
         </button>
       </div>
 
@@ -73,7 +83,12 @@ const ServicesCoach = () => {
 
         <button className="flex text-[#2EB593] font-semibold items-center gap-3">
           <p>Empecemos hoy</p>
-          <img src="/images/group-10.svg" width={25} alt="" />
+          <img
+            src="/images/group-10.svg"
+            className="animationButton2"
+            width={25}
+            alt=""
+          />
         </button>
       </div>
     </section>

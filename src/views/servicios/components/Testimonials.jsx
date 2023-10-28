@@ -18,7 +18,7 @@ const Testimonials = () => {
 
   return (
     <>
-      <div className="lg:block hidden w-[87%] mx-auto">
+      <div className="lg:block hidden w-[91%] mx-auto">
         <Swiper
           slidesPerView={3}
           spaceBetween={20}

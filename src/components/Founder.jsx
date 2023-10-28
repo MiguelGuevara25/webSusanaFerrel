@@ -8,12 +8,15 @@ const Founder = () => {
       {location.pathname === "/" && (
         <div
           className="lg:w-1/2 mb-8 lg:mb-0 relative"
-          // data-aos="fade-right"
+          data-aos="fade-right"
           data-aos-delay="400"
           data-aos-duration="1000"
         >
           <img src="/images/susanaProfile.png" className="w-full" />
-          <img src="/images/ellipse-18.svg" className="absolute bottom-0 2xl:left-20 left-0" />
+          <img
+            src="/images/ellipse-18.svg"
+            className="absolute bottom-0 2xl:left-20 left-0"
+          />
         </div>
       )}
 

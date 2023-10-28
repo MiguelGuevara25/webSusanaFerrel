@@ -12,6 +12,11 @@ h1 {
   z-index: 10;
 }
 
+.animationButton2:hover {
+  animation: slideOutRight 1s infinite;
+  z-index: 10;
+}
+
 .bg__img__header {
   background: linear-gradient(
     155deg,
