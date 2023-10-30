@@ -4,7 +4,11 @@ const EmpowerForms = ({ children, srcImg }) => {
       <img src={srcImg} className="md:w-80" />
       <div className="flex gap-6">
         <span className="text-2xl">{children}</span>
-        <img src="/images/arrowRight.svg" className="animationButton2" alt="" />
+        <img
+          src="/images/arrowRight.svg"
+          className="animationButton2 hover:cursor-pointer"
+          alt=""
+        />
       </div>
     </div>
   );
