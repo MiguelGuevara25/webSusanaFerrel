@@ -2,6 +2,7 @@ import Button from "../../../components/Button";
 import { Link } from "react-router-dom";
 import usePost from "../../../hooks/usePost";
 import Post from "../components/Post";
+import Subtitles from "../../../components/Subtitles";
 
 const Blog = () => {
   const {
@@ -13,19 +14,26 @@ const Blog = () => {
     post,
     showMore,
   } = usePost();
+
   return (
     <div className="lg:pt-20 pt-14">
       <div className="w-[87%] mx-auto">
         <div className="flex flex-col lg:flex-row lg:gap-14 gap-4 lg:w-9/12 lg:my-28 my-12">
-          <img
-            src={urlIMG}
-            className="relative object-cover rounded-xl w-full h-[248px]"
-            alt="Nuevo Blog"
-          />
+          {postAnt ? (
+            <img
+              src={urlIMG}
+              className="relative object-cover rounded-xl w-full h-[248px]"
+              alt="Nuevo Blog"
+            />
+          ) : (
+            <Subtitles>Cargando...</Subtitles>
+          )}
 
-          <p className="absolute text-white bg-[#2EB593] rounded-lg p-1.5 text-xs mt-3 ml-3">
-            ¡NUEVO!
-          </p>
+          {postAnt && (
+            <p className="absolute text-white bg-[#2EB593] rounded-lg p-1.5 text-xs mt-3 ml-3">
+              ¡NUEVO!
+            </p>
+          )}
 
           <div className="">
             <div>
@@ -37,9 +45,15 @@ const Blog = () => {
                 {postAnt?.attributes.titulo}
               </h2>
 
-              <span className="font-semibold text-[10px] uppercase">
-                {formatearFecha(postAnt?.attributes.publishedAt)}
-              </span>
+              {postAnt ? (
+                <span className="font-semibold text-[10px] uppercase">
+                  {formatearFecha(postAnt?.attributes.publishedAt)}
+                </span>
+              ) : (
+                <span className="font-semibold text-[10px] uppercase">
+                  Cargando...
+                </span>
+              )}
             </div>
 
             <p className="descriptionEmergencies2 mb-8">
@@ -57,11 +71,17 @@ const Blog = () => {
 
         <h3 className="text-2xl text-[#024F3C] mb-20">Más Recientes</h3>
 
-        <div className="md:grid md:grid-cols-2 lg:grid-cols-3 flex flex-col gap-20 place-items-center mb-[120px]">
-          {post.slice(0, visibleElements).map((postBlog) => (
-            <Post key={postBlog.id} postBlog={postBlog} />
-          ))}
-        </div>
+        {post?.length === 0 ? (
+          <div className="mb-10">
+            <Subtitles>Cargando Blog...</Subtitles>
+          </div>
+        ) : (
+          <div className="md:grid md:grid-cols-2 lg:grid-cols-3 flex flex-col gap-20 place-items-center mb-[120px]">
+            {post.slice(0, visibleElements).map((postBlog) => (
+              <Post key={postBlog.id} postBlog={postBlog} />
+            ))}
+          </div>
+        )}
 
         <div className="flex justify-center mb-40" onClick={handleClick}>
           <Button>{showMore ? "Mostrar menos" : "Cargar más articulos"}</Button>

@@ -18,7 +18,9 @@ const CollaboratorsDetails = () => {
 
       {colaborador.length === 0 ? (
         <div className="hidden lg:flex w-[87%] mx-auto">
-          <Subtitles>Cargando Colaboradores...</Subtitles>
+          <div className="mb-10">
+            <Subtitles>Cargando Colaboradores...</Subtitles>
+          </div>
         </div>
       ) : (
         <Swiper
@@ -52,7 +54,9 @@ const CollaboratorsDetails = () => {
 
       <div className="lg:hidden flex flex-col gap-14 w-[87%] mx-auto">
         {colaborador.length === 0 ? (
-          <Subtitles>Cargando Colaboradores...</Subtitles>
+          <div className="mb-10">
+            <Subtitles>Cargando Colaboradores...</Subtitles>
+          </div>
         ) : (
           colaborador.map((colaborador) => (
             <CollaboratorDetail
