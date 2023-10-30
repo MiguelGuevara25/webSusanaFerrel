@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoCall, IoMail, IoLocationSharp } from "react-icons/io5";
+import { useEffect, useRef } from "react";
 
 const Footer = () => {
   const fecha = new Date();
+  const footerRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Desplázate al principio del footer cuando cambie de ubicación
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
-    <footer className="bg-[#024F3C] py-14">
+    <footer ref={footerRef} className="bg-[#024F3C] py-14">
       <div className="w-[87%] mx-auto">
         <section className="flex gap-5 px-0 pb-8 border-b border-[#81fdde33] md:justify-end">
           <Link to="/">

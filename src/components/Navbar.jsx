@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
 import Footer from "./Footer";
 import Button from "./Button";
-import { useRef, useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +11,8 @@ const Navbar = () => {
 
   useEffect(() => {
     // Al cambiar el estado de isOpen, ajusta la posición del modal
+    window.scrollTo(0, 0);
+
     if (isOpen) {
       const modalElement = modalRef.current;
 

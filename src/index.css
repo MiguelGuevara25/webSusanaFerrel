@@ -92,5 +92,5 @@ h1 {
 }
 
 .no-scroll {
-  overflow: hidden;
+  overflow: hidden !important;
 }
