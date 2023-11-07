@@ -44,7 +44,7 @@ const CollaboratorsDetails = () => {
                   <span className="font-semibold text-2xl">{nombre}</span>
                   <span className="font-semibold text-base mb-4">{cargo}</span>
 
-                  <p className="text-base">{funcion}</p>
+                  <p className="text-base descriptionEmergencies2">{funcion}</p>
                 </div>
               </SwiperSlide>
             );

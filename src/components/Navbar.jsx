@@ -121,27 +121,27 @@ const Navbar = () => {
 
           <div className="text-3xl flex flex-col gap-10">
             <Link to="/" onClick={closeModal}>
-              <h2>Inicio</h2>
+              <h4>Inicio</h4>
             </Link>
 
             <Link to="/servicios" onClick={closeModal}>
-              <h2>Qué hacemos</h2>
+              <h4>Qué hacemos</h4>
             </Link>
 
             <Link to="/nosotros" onClick={closeModal}>
-              <h2>Quiénes somos</h2>
+              <h4>Quiénes somos</h4>
             </Link>
 
             <Link to="/blog" onClick={closeModal}>
-              <h2>Blog</h2>
+              <h4>Blog</h4>
             </Link>
 
             <Link to="/academia" onClick={closeModal}>
-              <h2>Academia</h2>
+              <h4>Academia</h4>
             </Link>
 
             <Link to="/contacto" onClick={closeModal}>
-              <h2>Conversemos</h2>
+              <h4>Conversemos</h4>
             </Link>
           </div>
 

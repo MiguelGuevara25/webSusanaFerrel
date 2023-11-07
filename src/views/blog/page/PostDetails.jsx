@@ -32,38 +32,40 @@ const PostDetails = () => {
   };
 
   return (
-    <div className="lg:w-1/2 w-[87%] mx-auto my-28">
-      <span>{postDetails.categoria}</span>
+    <div className="lg:pt-20 pt-14">
+      <div className="lg:w-1/2 w-[87%] mx-auto my-28">
+        <span>{postDetails.categoria}</span>
 
-      <h1 className="text-3xl font-bold text-[#024F3C]">
-        {postDetails.titulo}
-      </h1>
+        <h1 className="text-3xl font-bold text-[#024F3C]">
+          {postDetails.titulo}
+        </h1>
 
-      <span className="text-[10px] font-semibold uppercase">
-        {formatearFecha(postDetails.publishedAt)}
-      </span>
+        <span className="text-[10px] font-semibold uppercase">
+          {formatearFecha(postDetails.publishedAt)}
+        </span>
 
-      <img
-        src={`${import.meta.env.VITE_IMG_URL}${
-          postDetails.imagen?.data.attributes.url
-        }`}
-        className="md:mb-16 md:mt-9 my-10"
-      />
-
-      <p className="mb-16">{postDetails.descripcion}</p>
-
-      <button
-        className="flex text-[#2EB593] font-semibold gap-3 items-center"
-        onClick={() => navigate(-1)}
-      >
         <img
-          src="/images/group-10.svg"
-          className="rotate-180"
-          width={25}
-          alt=""
+          src={`${import.meta.env.VITE_IMG_URL}${
+            postDetails.imagen?.data.attributes.url
+          }`}
+          className="md:mb-16 md:mt-9 my-10"
         />
-        <p>Regresar</p>
-      </button>
+
+        <p className="mb-16">{postDetails.descripcion}</p>
+
+        <button
+          className="flex text-[#2EB593] font-semibold gap-3 items-center"
+          onClick={() => navigate(-1)}
+        >
+          <img
+            src="/images/group-10.svg"
+            className="rotate-180"
+            width={25}
+            alt=""
+          />
+          <p>Regresar</p>
+        </button>
+      </div>
     </div>
   );
 };
