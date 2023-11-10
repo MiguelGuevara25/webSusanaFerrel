@@ -1,8 +1,10 @@
 import Partners from "../../../components/Partners";
+import usePageServicios from "../../../hooks/usePageServicios";
 import ServicesCoach from "../components/ServicesCoach";
 import Testimonials from "../components/Testimonials";
 
 const Servicios = () => {
+  const { datosPageServicios } = usePageServicios();
   return (
     <div className="lg:pt-20 pt-14">
       <div className="relative flex flex-row-reverse">
@@ -13,16 +15,24 @@ const Servicios = () => {
         </div>
 
         <div className="lg:relative absolute bottom-0 text-[#EFFFFB] lg:w-1/2 flex items-center">
-          <div className="w-[87%] lg:w-[75%] mx-auto text-center lg:text-start">
-            <h1 className="text-4xl font-bold mb-9 lg:text-[#024F3C] lg:text-6xl">
-              Descubre nuestros servicios que potenciarán tu mejor yo
-            </h1>
+          {datosPageServicios.map((datos) => {
+            const { subtitlePrincipal, tituloPrincipal } = datos.attributes;
 
-            <p className="mb-4 lg:text-black lg:text-[28px]">
-              Conoce todas la posibilidades que pueden potenciar a ti y a tu
-              equipo.
-            </p>
-          </div>
+            return (
+              <div
+                key={datos.id}
+                className="w-[87%] lg:w-[75%] mx-auto text-center lg:text-start"
+              >
+                <h1 className="text-4xl font-bold mb-9 lg:text-[#024F3C] lg:text-6xl">
+                  {tituloPrincipal}
+                </h1>
+
+                <p className="mb-4 lg:text-black lg:text-[28px]">
+                  {subtitlePrincipal}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
 

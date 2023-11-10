@@ -1,7 +1,9 @@
 import { useLocation } from "react-router-dom";
+import useInicio from "../hooks/useInicio";
 
 const Founder = () => {
   const location = useLocation();
+  const { datosInicio } = useInicio();
 
   return (
     <section className="flex flex-col lg:flex-row w-[87%] mx-auto items-center lg:gap-36">
@@ -20,19 +22,17 @@ const Founder = () => {
         </div>
       )}
 
-      <div className="lg:w-1/2">
-        <img src="/images/nombreSusana.svg" className="mb-4" />
-        <p className="mb-6 lg:mb-10">CEO & Founder</p>
-        <p className="">
-          Mentora, coach bilingüe, consultora en Aprendizaje y Desarrollo y
-          Administradora de Empresas, con más de 20 años de experiencia como
-          líder profesional en la gestión de procesos de Recursos Humanos:
-          aprendizaje, reclutamiento, clima laboral, cultura, comunicaciones y
-          bienestar. Apasionada por el aprendizaje y desarrollo de personas
-          asumiendo distintos roles como: Speaker, Mentora, Facilitadora y
-          Consultora.
-        </p>
-      </div>
+      {datosInicio.map((datos) => {
+        const { cargoSusana, descriptionSusana } = datos.attributes;
+
+        return (
+          <div key={datos.id} className="lg:w-1/2">
+            <img src="/images/nombreSusana.svg" className="mb-4" />
+            <p className="mb-6 lg:mb-10">{cargoSusana}</p>
+            <p className="">{descriptionSusana}</p>
+          </div>
+        );
+      })}
     </section>
   );
 };

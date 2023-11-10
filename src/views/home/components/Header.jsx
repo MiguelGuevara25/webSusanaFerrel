@@ -1,6 +1,9 @@
 import Button from "../../../components/Button";
+import useInicio from "../../../hooks/useInicio";
 
 const Header = () => {
+  const { datosInicio } = useInicio();
+
   return (
     <header className="flex lg:flex-row-reverse flex-col lg:w-[87%] mx-auto overflow-hidden">
       <div className="lg:w-1/2 relative h-[350px] lg:h-[950px]">
@@ -35,23 +38,29 @@ const Header = () => {
         <div className="bg__img__header2 w-[200px] h-[200px] -right-20 -bottom-10 lg:hidden"></div>
       </div>
 
-      <div className="lg:w-1/2 flex flex-col justify-center lg:gap-12 gap-9 w-[87%] mx-auto">
-        <h1 className="text-[#024F3C] font-bold lg:text-[64px] text-4xl lg:text-start text-center lg:leading-[72px]">
-          Descubre tu fortaleza interna y toma las riendas de la vida que
-          anhelas
-        </h1>
+      {datosInicio.map((datos) => {
+        const { tituloPrincipal, subtitlePrincipal } = datos.attributes;
 
-        <p className="lg:text-3xl lg:text-start text-center lg:mb-16 mb-5">
-          Te ayudamos a crear un ambiente ideal para el crecimiento personal y
-          colectivo.
-        </p>
+        return (
+          <div
+            key={datos.id}
+            className="lg:w-1/2 flex flex-col justify-center lg:gap-12 gap-9 w-[87%] mx-auto"
+          >
+            <h1 className="text-[#024F3C] font-bold lg:text-[64px] text-4xl lg:text-start text-center lg:leading-[72px]">
+              {tituloPrincipal}
+            </h1>
 
-        <div className="mb-5 self-center lg:self-start ml-1">
-          <Button>Conversemos</Button>
-        </div>
+            <p className="lg:text-3xl lg:text-start text-center lg:mb-16 mb-5">
+              {subtitlePrincipal}
+            </p>
+            <div className="mb-5 self-center lg:self-start ml-1">
+              <Button>Conversemos</Button>
+            </div>
 
-        <img className="self-start" src="/images/arrowDown.svg" />
-      </div>
+            <img className="self-start" src="/images/arrowDown.svg" />
+          </div>
+        );
+      })}
     </header>
   );
 };

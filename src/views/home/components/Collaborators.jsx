@@ -3,9 +3,11 @@ import Subtitles from "../../../components/Subtitles";
 import Collaborator from "./Collaborator";
 import EmpowerForms from "../../../components/EmpowerForms";
 import useCollaborators from "../../../hooks/useCollaborators";
+import useServicios from "../../../hooks/useServicios";
 
 const Collaborators = () => {
   const { colaborador } = useCollaborators();
+  const { servicios } = useServicios();
 
   return (
     <>
@@ -73,17 +75,17 @@ const Collaborators = () => {
         </Subtitles>
 
         <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
-          <EmpowerForms srcImg="/images/ilus_Coaching.svg">
-            Coaching
-          </EmpowerForms>
+          {servicios.map((servicio) => {
+            const { nombre, imagen } = servicio.attributes;
+            const urlIMG =
+              import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
 
-          <EmpowerForms srcImg="/images/ilus_Mentoring.svg">
-            Mentoring
-          </EmpowerForms>
-
-          <EmpowerForms srcImg="/images/ilus_Liderazgo.svg">
-            Liderazgo
-          </EmpowerForms>
+            return (
+              <EmpowerForms key={servicio.id} srcImg={urlIMG}>
+                {nombre}
+              </EmpowerForms>
+            );
+          })}
         </div>
       </section>
     </>
