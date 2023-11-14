@@ -28,7 +28,7 @@ const Collaborators = () => {
           </div>
         ) : (
           <div className="hidden lg:grid grid-cols-4 w-3/5 mx-auto gap-y-10">
-            {colaborador.map((colab) => (
+            {colaborador?.map((colab) => (
               <Collaborator key={colab.id} colab={colab} />
             ))}
           </div>
@@ -75,7 +75,7 @@ const Collaborators = () => {
         </Subtitles>
 
         <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
-          {servicios.map((servicio) => {
+          {servicios?.map((servicio) => {
             const { nombre, imagen } = servicio.attributes;
             const urlIMG =
               import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;

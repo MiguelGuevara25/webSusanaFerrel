@@ -38,7 +38,7 @@ const Header = () => {
         <div className="bg__img__header2 w-[200px] h-[200px] -right-20 -bottom-10 lg:hidden"></div>
       </div>
 
-      {datosInicio.map((datos) => {
+      {datosInicio?.map((datos) => {
         const { tituloPrincipal, subtitlePrincipal } = datos.attributes;
 
         return (

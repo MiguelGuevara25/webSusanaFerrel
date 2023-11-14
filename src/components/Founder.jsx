@@ -22,7 +22,7 @@ const Founder = () => {
         </div>
       )}
 
-      {datosInicio.map((datos) => {
+      {datosInicio?.map((datos) => {
         const { cargoSusana, descriptionSusana } = datos.attributes;
 
         return (
