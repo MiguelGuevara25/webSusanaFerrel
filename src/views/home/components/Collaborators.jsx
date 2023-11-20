@@ -44,7 +44,7 @@ const Collaborators = () => {
             className="mySwiper w-full text-xs"
             style={{ marginLeft: "24px" }}
           >
-            {colaborador.map((colab) => {
+            {colaborador?.map((colab) => {
               const { imagen, nombre, cargo } = colab.attributes;
               const urlIMG =
                 import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
