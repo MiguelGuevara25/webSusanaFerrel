@@ -31,7 +31,7 @@ const Courses = () => {
       <section className="w-[87%] mx-auto">
         {obtenerCursos?.length === 0 ? (
           <div className="mb-10">
-            <Subtitles>Cargando Cursos...</Subtitles>
+            <Subtitles>Cargando Cursos....</Subtitles>
           </div>
         ) : (
           <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-[80px] place-items-center lg:mb-[120px] mb-20">
