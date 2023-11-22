@@ -6,7 +6,7 @@ const ServicesCoach = () => {
 
   return (
     <section className="w-[87%] mx-auto flex flex-col lg:flex-row md:gap-16 gap-20 [&>div]:flex-1">
-      {servicios.map((servicio) => {
+      {servicios?.map((servicio) => {
         const { nombre, descripcion, imagen } = servicio.attributes;
         const urlIMG =
           import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;

@@ -14,7 +14,7 @@ const AboutUs = () => {
         </div>
 
         <div className="lg:w-1/2 flex items-center">
-          {datosInicio.map((datos) => {
+          {datosInicio?.map((datos) => {
             const { cargoSusana, descriptionSusana } = datos.attributes;
 
             return (

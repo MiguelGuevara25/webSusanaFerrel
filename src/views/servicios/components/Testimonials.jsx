@@ -28,7 +28,7 @@ const Testimonials = () => {
           modules={[Pagination]}
           className="mySwiper flex gap-5 w-full [&>div>div]:mb-12 [&>div>span]:bg-[#128266]"
         >
-          {obtenerTestimonios.map((testimonial) => {
+          {obtenerTestimonios?.map((testimonial) => {
             const { nombre, nombre_servicio, cargo, descripcion, imagen } =
               testimonial.attributes;
             const urlIMG =
@@ -73,7 +73,7 @@ const Testimonials = () => {
           modules={[Pagination]}
           className="mySwiper flex gap-5 w-full [&>div>div]:mb-12 [&>div>span]:bg-[#128266]"
         >
-          {obtenerTestimonios.map((testimonial) => {
+          {obtenerTestimonios?.map((testimonial) => {
             const { nombre, nombre_servicio, cargo, descripcion, imagen } =
               testimonial.attributes;
             const urlIMG =
