@@ -57,7 +57,7 @@ const Collaborators = () => {
                       className="rounded-full h-32 w-32 object-cover"
                     />
                     <span className="font-semibold text-center">{nombre}</span>
-                    <span>{cargo}</span>
+                    <span className="text-center">{cargo}</span>
                   </div>
                 </SwiperSlide>
               );

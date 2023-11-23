@@ -1,6 +1,6 @@
 const CollaboratorDetail = ({ colaborador }) => {
-  const { nombre, funcion, cargo, imagen } = colaborador.attributes;
-  const urlIMG = import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
+  const { nombre, funcion, cargo, foto } = colaborador.attributes;
+  const urlIMG = import.meta.env.VITE_IMG_URL + foto.data?.attributes.url;
 
   return (
     <div className="flex flex-col gap-4">

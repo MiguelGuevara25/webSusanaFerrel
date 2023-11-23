@@ -30,9 +30,9 @@ const CollaboratorsDetails = () => {
           style={{ marginLeft: "100px" }}
         >
           {colaborador?.map((colab) => {
-            const { imagen, nombre, cargo, funcion } = colab.attributes;
+            const { foto, nombre, cargo, funcion } = colab.attributes;
             const urlIMG =
-              import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
+              import.meta.env.VITE_IMG_URL + foto?.data?.attributes.url;
 
             return (
               <SwiperSlide key={colab.id} style={{ width: "341px" }}>
