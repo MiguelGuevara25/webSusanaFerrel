@@ -35,7 +35,7 @@ const AboutUs = () => {
 
       <div className="mb-24">
         <Courses />
-      </div>
+      </div> 
 
       <CollaboratorsDetails />
     </div>

@@ -77,7 +77,7 @@ const Blog = () => {
           </div>
         ) : (
           <div className="md:grid md:grid-cols-2 lg:grid-cols-3 flex flex-col gap-20 place-items-center mb-[120px]">
-            {post.slice(0, visibleElements).map((postBlog) => (
+            {post?.slice(0, visibleElements).map((postBlog) => (
               <Post key={postBlog.id} postBlog={postBlog} />
             ))}
           </div>

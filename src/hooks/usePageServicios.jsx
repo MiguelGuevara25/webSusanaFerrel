@@ -4,7 +4,7 @@ const usePageServicios = () => {
   const [datosPageServicios, setPageDatosServicios] = useState([]);
 
   const getDatosServicios = async () => {
-    const url = `${import.meta.env.VITE_API_URL}pagina-servicios`;
+    const url = `${import.meta.env.VITE_API_URL}page-servicios?populate=*`;
     const res = await fetch(url);
     const data = await res.json();
     setPageDatosServicios(data.data);

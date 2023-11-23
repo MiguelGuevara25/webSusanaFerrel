@@ -6,7 +6,7 @@ const Testimonials = () => {
   const [obtenerTestimonios, setObtenerTestimonios] = useState([]);
 
   const getTestimonios = async () => {
-    const url = `${import.meta.env.VITE_API_URL}testimonios?populate=imagen`;
+    const url = `${import.meta.env.VITE_API_URL}testimonios?populate=*`;
     const res = await fetch(url);
     const data = await res.json();
     setObtenerTestimonios(data?.data);
@@ -29,10 +29,10 @@ const Testimonials = () => {
           className="mySwiper flex gap-5 w-full [&>div>div]:mb-12 [&>div>span]:bg-[#128266]"
         >
           {obtenerTestimonios?.map((testimonial) => {
-            const { nombre, nombre_servicio, cargo, descripcion, imagen } =
+            const { nombre, nombre_servicio, cargo, testimonio, imagen } =
               testimonial.attributes;
             const urlIMG =
-              import.meta.env.VITE_IMG_URL + imagen.data.attributes.url;
+              import.meta.env.VITE_IMG_URL + imagen?.data?.attributes.url;
 
             return (
               <SwiperSlide key={testimonial.id}>
@@ -42,7 +42,7 @@ const Testimonials = () => {
                       {nombre_servicio}
                     </h3>
                     <p className="descriptionEmergencies2">
-                      &quot;{descripcion}&quot;
+                      &quot;{testimonio}&quot;
                     </p>
                   </div>
 

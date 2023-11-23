@@ -14,8 +14,6 @@ const CollaboratorsDetails = () => {
         </div>
       </div>
 
-      <img src="/images/rectangle-6.png" className="mb-12 md:hidden w-full" />
-
       {colaborador?.length === 0 ? (
         <div className="hidden lg:flex w-[87%] mx-auto">
           <div className="mb-10">

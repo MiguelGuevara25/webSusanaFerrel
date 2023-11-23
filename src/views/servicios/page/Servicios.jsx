@@ -7,34 +7,33 @@ const Servicios = () => {
   const { datosPageServicios } = usePageServicios();
   return (
     <div className="lg:pt-20 pt-14">
-      <div className="relative flex flex-row-reverse">
-        <div className="relative lg:w-1/2 md:w-full">
-          <img src="/images/rectangle-17.png" className="w-full" />
+      {datosPageServicios?.map((datos) => {
+        const { tituloPrincipal, subtituloPrincipal } = datos.attributes;
+        // const urlIMG =
+        //   import.meta.env.VITE_IMG_URL + imagenPrincipal?.data?.attributes.url;
 
-          <div className="absolute fondoSusana inset-0"></div>
-        </div>
+        return (
+          <div key={datos.id} className="relative flex flex-row-reverse">
+            <div className="relative lg:w-1/2 md:w-full">
+              <img src="/images/rectangle-17.png" className="w-full" />
 
-        <div className="lg:relative absolute bottom-0 text-[#EFFFFB] lg:w-1/2 flex items-center">
-          {datosPageServicios?.map((datos) => {
-            const { subtitlePrincipal, tituloPrincipal } = datos.attributes;
+              <div className="absolute fondoSusana inset-0"></div>
+            </div>
 
-            return (
-              <div
-                key={datos.id}
-                className="w-[87%] lg:w-[75%] mx-auto text-center lg:text-start"
-              >
+            <div className="lg:relative absolute bottom-0 text-[#EFFFFB] lg:w-1/2 flex items-center">
+              <div className="w-[87%] lg:w-[75%] mx-auto text-center lg:text-start">
                 <h1 className="text-4xl font-bold mb-9 lg:text-[#024F3C] lg:text-6xl">
                   {tituloPrincipal}
                 </h1>
 
                 <p className="mb-4 lg:text-black lg:text-[28px]">
-                  {subtitlePrincipal}
+                  {subtituloPrincipal}
                 </p>
               </div>
-            );
-          })}
-        </div>
-      </div>
+            </div>
+          </div>
+        );
+      })}
 
       <div className="mb-44 mt-16">
         <Partners />

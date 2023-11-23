@@ -4,23 +4,28 @@ import Collaborator from "./Collaborator";
 import EmpowerForms from "../../../components/EmpowerForms";
 import useCollaborators from "../../../hooks/useCollaborators";
 import useServicios from "../../../hooks/useServicios";
+import useInicio from "../../../hooks/useInicio";
 
 const Collaborators = () => {
   const { colaborador } = useCollaborators();
+  const { datosInicio } = useInicio();
   const { servicios } = useServicios();
 
   return (
     <>
       <section className="flex flex-col gap-8 lg:mb-40 mb-[86px] overflow-hidden">
-        <div className="flex flex-col gap-4 w-[87%] mx-auto">
-          <Subtitles>Juntos lograremos tu mejor versión</Subtitles>
+        {datosInicio?.map((datos) => {
+          const { tituloTrabajadores, descripcionTrabajadores } =
+            datos.attributes;
 
-          <p className="lg:w-3/5 w-full">
-            Somos profesionales capacitados para la transformación de equipos y
-            sus integrantes a través del aprendizaje, creando un ambiente ideal
-            para tu desarrollo personal, el de tu empresa y tus colaboradores.
-          </p>
-        </div>
+          return (
+            <div key={datos.id} className="flex flex-col gap-4 w-[87%] mx-auto">
+              <Subtitles>{tituloTrabajadores}</Subtitles>
+
+              <p className="lg:w-3/5 w-full">{descripcionTrabajadores}</p>
+            </div>
+          );
+        })}
 
         {colaborador?.length === 0 ? (
           <div className="hidden md:block w-[87%] mx-auto">

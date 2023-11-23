@@ -5,14 +5,14 @@ const usePost = () => {
   const [visibleElements, setVisibleElements] = useState(6);
   const [showMore, setShowMore] = useState(false);
 
-  const postAnt = post.at(-1);
+  const postAnt = post?.at(-1);
 
   const urlIMG =
     import.meta.env.VITE_IMG_URL +
     postAnt?.attributes.imagen.data?.attributes.url;
 
   const getPost = async () => {
-    const url = `${import.meta.env.VITE_API_URL}posts?populate=imagen`;
+    const url = `${import.meta.env.VITE_API_URL}posts?populate=*`;
     const res = await fetch(url);
     const data = await res.json();
     setPost(data.data);
