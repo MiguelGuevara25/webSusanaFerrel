@@ -81,9 +81,9 @@ const Collaborators = () => {
 
         <div className="flex md:flex-row justify-between flex-col gap-10 mt-20">
           {servicios?.map((servicio) => {
-            const { nombre, imagen } = servicio.attributes;
+            const { nombre, foto } = servicio.attributes;
             const urlIMG =
-              import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
+              import.meta.env.VITE_IMG_URL + foto.data?.attributes.url;
 
             return (
               <EmpowerForms key={servicio.id} srcImg={urlIMG}>
