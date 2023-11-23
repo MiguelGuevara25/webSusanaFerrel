@@ -8,14 +8,15 @@ const Servicios = () => {
   return (
     <div className="lg:pt-20 pt-14">
       {datosPageServicios?.map((datos) => {
-        const { tituloPrincipal, subtituloPrincipal } = datos.attributes;
-        // const urlIMG =
-        //   import.meta.env.VITE_IMG_URL + imagenPrincipal?.data?.attributes.url;
+        const { tituloPrincipal, subtituloPrincipal, imagenPrincipal } =
+          datos.attributes;
+        const urlIMG =
+          import.meta.env.VITE_IMG_URL + imagenPrincipal?.data?.attributes.url;
 
         return (
           <div key={datos.id} className="relative flex flex-row-reverse">
             <div className="relative lg:w-1/2 md:w-full">
-              <img src="/images/rectangle-17.png" className="w-full" />
+              <img src={urlIMG} className="w-full lg:h-screen h-[450px]" />
 
               <div className="absolute fondoSusana inset-0"></div>
             </div>

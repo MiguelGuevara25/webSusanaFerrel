@@ -23,7 +23,7 @@ const Courses = () => {
             className="relative flex flex-row-reverse lg:mb-[178px] mb-[121px]"
           >
             <div className="relative lg:w-1/2 md:w-full">
-              <img src={urlIMG} className="w-full h-screen" />
+              <img src={urlIMG} className="w-full lg:h-screen h-[450px]" />
               <div className="absolute bg-gradient-to-t from-[#024F3C] inset-0"></div>
             </div>
 
