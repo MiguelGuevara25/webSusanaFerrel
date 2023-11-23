@@ -16,7 +16,7 @@ const CollaboratorsDetails = () => {
 
       <img src="/images/rectangle-6.png" className="mb-12 md:hidden w-full" />
 
-      {colaborador.length === 0 ? (
+      {colaborador?.length === 0 ? (
         <div className="hidden lg:flex w-[87%] mx-auto">
           <div className="mb-10">
             <Subtitles>Cargando Colaboradores...</Subtitles>
@@ -29,7 +29,7 @@ const CollaboratorsDetails = () => {
           className="mySwiper w-full text-xs"
           style={{ marginLeft: "100px" }}
         >
-          {colaborador.map((colab) => {
+          {colaborador?.map((colab) => {
             const { imagen, nombre, cargo, funcion } = colab.attributes;
             const urlIMG =
               import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
@@ -53,12 +53,12 @@ const CollaboratorsDetails = () => {
       )}
 
       <div className="lg:hidden flex flex-col gap-14 w-[87%] mx-auto">
-        {colaborador.length === 0 ? (
+        {colaborador?.length === 0 ? (
           <div className="mb-10">
             <Subtitles>Cargando Colaboradores...</Subtitles>
           </div>
         ) : (
-          colaborador.map((colaborador) => (
+          colaborador?.map((colaborador) => (
             <CollaboratorDetail
               key={colaborador.id}
               colaborador={colaborador}

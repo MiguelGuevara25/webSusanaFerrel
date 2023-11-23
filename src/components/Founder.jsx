@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
-import useInicio from "../hooks/useInicio";
+import useInfoSusana from "../hooks/useInfoSusana";
 
 const Founder = () => {
   const location = useLocation();
-  const { datosInicio } = useInicio();
+  const { infoSusana } = useInfoSusana();
 
   return (
     <section className="flex flex-col lg:flex-row w-[87%] mx-auto items-center lg:gap-36">
@@ -22,14 +22,14 @@ const Founder = () => {
         </div>
       )}
 
-      {datosInicio?.map((datos) => {
-        const { cargoSusana, descriptionSusana } = datos.attributes;
+      {infoSusana?.map((datos) => {
+        const { cargo, descripcion } = datos.attributes;
 
         return (
           <div key={datos.id} className="lg:w-1/2">
             <img src="/images/nombreSusana.svg" className="mb-4" />
-            <p className="mb-6 lg:mb-10">{cargoSusana}</p>
-            <p className="">{descriptionSusana}</p>
+            <p className="mb-6 lg:mb-10">{cargo}</p>
+            <p className="">{descripcion}</p>
           </div>
         );
       })}

@@ -1,21 +1,21 @@
-import useInicio from "../../../hooks/useInicio";
+import useInfoSusana from "../../../hooks/useInfoSusana";
 import CollaboratorsDetails from "../components/CollaboratorsDetails";
 import Courses from "../components/Courses";
 
 const AboutUs = () => {
-  const { datosInicio } = useInicio();
+  const { infoSusana } = useInfoSusana();
 
   return (
     <div className="lg:pt-[100px] pt-14">
       <div className="relative flex lg:flex-row-reverse flex-col mb-20">
         <div className="relative lg:w-1/2 md:w-full">
-          <img src="/images/photoSusana.png" className="w-full" />
+          <img src="/images/Susana.jpeg" className="w-full" />
           <div className="absolute fondoSusana inset-0"></div>
         </div>
 
         <div className="lg:w-1/2 flex items-center">
-          {datosInicio?.map((datos) => {
-            const { cargoSusana, descriptionSusana } = datos.attributes;
+          {infoSusana?.map((datos) => {
+            const { cargo, descripcion } = datos.attributes;
 
             return (
               <div key={datos.id} className="w-[87%] lg:w-[75%] mx-auto">
@@ -25,8 +25,8 @@ const AboutUs = () => {
                   alt=""
                 />
 
-                <p className="lg:mb-12 mb-7">{cargoSusana}</p>
-                <p className="">{descriptionSusana}</p>
+                <p className="lg:mb-12 mb-7">{cargo}</p>
+                <p className="">{descripcion}</p>
               </div>
             );
           })}

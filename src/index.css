@@ -20,7 +20,7 @@ h1 {
 .bg__img__header {
   background: linear-gradient(
     155deg,
-    #ff8487 11.27%,
+    rgb(255, 133, 135, 0.7) 11.27%,
     rgba(255, 255, 255, 0) 84.32%
   );
 
