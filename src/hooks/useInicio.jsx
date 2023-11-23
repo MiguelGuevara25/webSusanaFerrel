@@ -7,7 +7,6 @@ const useInicio = () => {
     const url = `${import.meta.env.VITE_API_URL}page-inicios?populate=*`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.data)
     setDatosInicio(data.data);
   };
 
