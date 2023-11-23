@@ -26,7 +26,8 @@ const Home = () => {
           <h2 className="text-[#024F3C] font-bold lg:text-[42px] text-[36px] lg:leading-[47px] leading-10">
             Conviértete en la
             <br />
-            mejor versión de ti
+            {/* mejor versión de ti */}
+            Probando git en frontend
           </h2>
         </div>
 
