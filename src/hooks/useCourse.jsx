@@ -4,7 +4,7 @@ const useCourse = () => {
   const [obtenerCursos, setObtenerCursos] = useState([]);
 
   const getCursos = async () => {
-    const url = `${import.meta.env.VITE_API_URL}cursos?populate=imagen`;
+    const url = `${import.meta.env.VITE_API_URL}cursos?populate=*`;
     const res = await fetch(url);
     const data = await res.json();
     setObtenerCursos(data.data);

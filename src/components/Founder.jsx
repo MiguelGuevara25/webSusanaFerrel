@@ -14,7 +14,7 @@ const Founder = () => {
           data-aos-delay="400"
           data-aos-duration="1000"
         >
-          <img src="/images/susanaProfile.png" className="w-full" />
+          <img src="/images/Susana.jpeg" className="w-full rounded-full" />
           <img
             src="/images/ellipse-18.svg"
             className="absolute bottom-0 2xl:left-20 left-0"

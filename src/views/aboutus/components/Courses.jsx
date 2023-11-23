@@ -1,13 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import useAboutUs from "../../../hooks/useAboutUs";
 
 const Courses = () => {
+  const { datosPageAboutUs } = useAboutUs();
+
   return (
     <section className="w-[87%] mx-auto">
       <div className="md:w-4/6 lg:mb-20 mb-8">
-        <h2 className="lg:leading-[52.08px] leading-9 text-[#024F3C] font-bold lg:text-[42px] text-[31px]">
-          Creamos un círculos virtuoso dando para contribuir en el desarrollo de
-          los demás
-        </h2>
+        {datosPageAboutUs?.map((datos) => {
+          const { tituloAcademia } = datos.attributes;
+
+          return (
+            <h2
+              key={datos.id}
+              className="lg:leading-[52.08px] leading-9 text-[#024F3C] font-bold lg:text-[42px] text-[31px]"
+            >
+              {tituloAcademia}
+            </h2>
+          );
+        })}
       </div>
 
       <div className="lg:flex hidden [&>div]:flex-1 gap-20">

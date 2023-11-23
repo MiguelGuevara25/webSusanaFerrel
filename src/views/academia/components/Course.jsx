@@ -1,8 +1,8 @@
 import Subtitles from "../../../components/Subtitles";
 
 const Course = ({ curso }) => {
-  const { imagen, descripcion, titulo } = curso.attributes;
-  const urlIMG = import.meta.env.VITE_IMG_URL + imagen?.data?.attributes.url;
+  const { foto, descripcion, titulo } = curso.attributes;
+  const urlIMG = import.meta.env.VITE_IMG_URL + foto?.data?.attributes.url;
 
   return (
     <div className="w-[342px] h-[482px]">

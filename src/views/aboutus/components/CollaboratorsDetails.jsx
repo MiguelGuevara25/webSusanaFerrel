@@ -2,15 +2,21 @@ import Subtitles from "../../../components/Subtitles";
 import CollaboratorDetail from "./CollaboratorDetail";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useCollaborators from "../../../hooks/useCollaborators";
+import useAboutUs from "../../../hooks/useAboutUs";
 
 const CollaboratorsDetails = () => {
   const { colaborador } = useCollaborators();
+  const { datosPageAboutUs } = useAboutUs();
 
   return (
     <section className="overflow-hidden">
       <div className="mb-8 md:mb-16 w-[87%] mx-auto">
         <div className="md:w-[50%]">
-          <Subtitles>Conoce al equipo que te llevarán a lo más alto</Subtitles>
+          {datosPageAboutUs?.map((datos) => {
+            const { tituloTrabajadores } = datos.attributes;
+
+            return <Subtitles key={datos.id}>{tituloTrabajadores}</Subtitles>;
+          })}
         </div>
       </div>
 
