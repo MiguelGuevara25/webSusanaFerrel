@@ -9,7 +9,7 @@ const usePost = () => {
 
   const urlIMG =
     import.meta.env.VITE_IMG_URL +
-    postAnt?.attributes.imagen.data?.attributes.url;
+    postAnt?.attributes.foto?.data?.attributes.url;
 
   const getPost = async () => {
     const url = `${import.meta.env.VITE_API_URL}posts?populate=*`;

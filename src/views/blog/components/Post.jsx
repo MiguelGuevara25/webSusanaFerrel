@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Post = ({ postBlog }) => {
-  const { titulo, imagen, categoria, publishedAt, descripcion, url } =
+  const { titulo, foto, categoria, publishedAt, descripcion, url } =
     postBlog.attributes;
-  const urlIMG = import.meta.env.VITE_IMG_URL + imagen.data?.attributes.url;
+  const urlIMG = import.meta.env.VITE_IMG_URL + foto?.data?.attributes.url;
 
   const formatearFecha = (fecha) => {
     const fechaNueva = new Date(fecha);

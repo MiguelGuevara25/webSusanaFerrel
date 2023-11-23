@@ -9,7 +9,7 @@ const PostDetails = () => {
   const getPostDetails = async (urlData) => {
     const url = `${
       import.meta.env.VITE_API_URL
-    }posts?filters[url]=${urlData}&populate=imagen`;
+    }posts?filters[url]=${urlData}&populate=*`;
 
     const res = await fetch(url);
     const data = await res.json();
@@ -34,24 +34,24 @@ const PostDetails = () => {
   return (
     <div className="lg:pt-20 pt-14">
       <div className="lg:w-1/2 w-[87%] mx-auto my-28">
-        <span>{postDetails.categoria}</span>
+        <span>{postDetails?.categoria}</span>
 
         <h1 className="text-3xl font-bold text-[#024F3C]">
-          {postDetails.titulo}
+          {postDetails?.titulo}
         </h1>
 
         <span className="text-[10px] font-semibold uppercase">
-          {formatearFecha(postDetails.publishedAt)}
+          {formatearFecha(postDetails?.publishedAt)}
         </span>
 
         <img
           src={`${import.meta.env.VITE_IMG_URL}${
-            postDetails.imagen?.data.attributes.url
+            postDetails?.foto?.data.attributes.url
           }`}
           className="md:mb-16 md:mt-9 my-10"
         />
 
-        <p className="mb-16">{postDetails.descripcion}</p>
+        <p className="mb-16">{postDetails?.descripcion}</p>
 
         <button
           className="flex text-[#2EB593] font-semibold gap-3 items-center"
