@@ -55,7 +55,7 @@ const Courses = () => {
           slidesPerView={"auto"}
           spaceBetween={32}
           className="mySwiper text-xs w-full"
-          style={{ marginLeft: "24px" }}
+          style={{ paddingRight: "24px" }}
         >
           <SwiperSlide style={{ width: "200px" }}>
             <div className="flex flex-col gap-4">

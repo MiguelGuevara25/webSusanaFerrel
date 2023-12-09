@@ -17,35 +17,6 @@ h1 {
   z-index: 10;
 }
 
-.bg__img__header {
-  background: linear-gradient(
-    155deg,
-    rgb(255, 133, 135, 0.7) 11.27%,
-    rgba(255, 255, 255, 0) 84.32%
-  );
-
-  position: absolute;
-  border-radius: 100%;
-}
-
-.bg__img__header2 {
-  background: linear-gradient(
-    323deg,
-    #ff5053 7.42%,
-    rgba(255, 255, 255, 0) 52.36%
-  );
-
-  position: absolute;
-  border-radius: 100%;
-}
-
-.papa {
-  background-image: url("/images/prueba.png");
-  background-position: 0% 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .descriptionEmergencies {
   display: -webkit-box;
   -webkit-box-orient: vertical;

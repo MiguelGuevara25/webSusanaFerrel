@@ -57,7 +57,7 @@ const CollaboratorsDetails = () => {
         </Swiper>
       )}
 
-      <div className="lg:hidden flex flex-col gap-14 w-[87%] mx-auto">
+      <div className="lg:hidden flex flex-col gap-14 w-[87%] mx-auto mb-20">
         {colaborador?.length === 0 ? (
           <div className="mb-10">
             <Subtitles>Cargando Colaboradores...</Subtitles>
