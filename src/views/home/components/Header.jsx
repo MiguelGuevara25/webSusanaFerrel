@@ -29,7 +29,7 @@ const Header = () => {
           >
             <div className="lg:w-1/2 relative h-[350px] lg:h-[950px]">
               <div
-                className="lg:w-[586.086px] lg:h-[586.086px] w-80 h-80 rounded-full absolute lg:right-0 lg:left-8 -left-24 -top-12 -z-10"
+                className="lg:w-[586.086px] lg:h-[586.086px] w-80 h-80 rounded-full absolute lg:right-0 right-40 -top-12 -z-10"
                 style={{
                   backgroundImage: `linear-gradient(155deg, #ff8487 5%, rgba(255,255,255,0) 75.32%), url(${urlIMG})`,
                   backgroundPosition: "center",
