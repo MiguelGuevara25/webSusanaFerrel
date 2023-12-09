@@ -37,7 +37,7 @@ const Navbar = () => {
   useEffect(() => {
     setTimeout(() => {
       setScreenLoading(false);
-    }, 3000);
+    }, 5000);
   }, []);
 
   return (
