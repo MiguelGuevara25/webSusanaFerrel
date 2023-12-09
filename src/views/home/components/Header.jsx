@@ -33,6 +33,7 @@ const Header = () => {
                 className="rounded-full absolute w-80 h-80 -left-24 -top-12 -z-20 lg:hidden"
                 width={320}
               />
+
               <div className="bg__img__header w-80 h-80 -z-10 -left-24 -top-12 lg:hidden"></div>
 
               <img
@@ -40,6 +41,7 @@ const Header = () => {
                 className="rounded-full w-[586.086px] h-[586.086px] absolute right-0 -top-12 -z-10 hidden lg:block"
                 alt=""
               />
+
               <div className="bg__img__header w-[586.086px] h-[586.086px] -z-10 right-0 -top-12 hidden lg:block"></div>
 
               <img
@@ -47,14 +49,16 @@ const Header = () => {
                 className="rounded-full w-[367px] h-[367px] absolute right-0 bottom-0 -z-10 hidden lg:block"
                 alt=""
               />
+
               <div className="bg__img__header2 w-[367px] h-[367px] right-0 bottom-0 hidden lg:block"></div>
 
-              <img 
+              <img
                 src={urlIMG2}
                 className="rounded-full w-[200px] h-[200px] absolute -right-20 -bottom-10 -z-10 lg:hidden"
                 width={200}
                 alt=""
               />
+
               <div className="bg__img__header2 w-[200px] h-[200px] -right-20 -bottom-10 lg:hidden"></div>
             </div>
 

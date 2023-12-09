@@ -44,6 +44,7 @@ const CollaboratorsDetails = () => {
                   <img
                     src={urlIMG}
                     className="h-[248px] object-cover rounded-xl w-full mb-6"
+                    style={{ objectPosition: "0% 27%" }}
                   />
                   <span className="font-semibold text-2xl">{nombre}</span>
                   <span className="font-semibold text-base mb-4">{cargo}</span>
