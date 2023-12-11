@@ -31,7 +31,7 @@ const CollaboratorsDetails = () => {
           slidesPerView={"auto"}
           spaceBetween={86}
           className="mySwiper w-full text-xs"
-          style={{ marginLeft: "100px" }}
+          style={{ paddingLeft: "6.5%" }}
         >
           {colaborador?.map((colab) => {
             const { foto, nombre, cargo, funcion } = colab.attributes;

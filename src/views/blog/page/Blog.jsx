@@ -83,9 +83,13 @@ const Blog = () => {
           </div>
         )}
 
-        <div className="flex justify-center mb-40" onClick={handleClick}>
-          <Button>{showMore ? "Mostrar menos" : "Cargar más articulos"}</Button>
-        </div>
+        {post?.length >= 7 && (
+          <div className="flex justify-center mb-40" onClick={handleClick}>
+            <Button>
+              {showMore ? "Mostrar menos" : "Cargar más articulos"}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
