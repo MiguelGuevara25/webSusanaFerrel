@@ -1,8 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import useAboutUs from "../../../hooks/useAboutUs";
+import usePageAboutUsCourse from "../../../hooks/usePageAboutUsCourse";
 
 const Courses = () => {
   const { datosPageAboutUs } = useAboutUs();
+  const { datosPageAboutUsCourse } = usePageAboutUsCourse();
 
   return (
     <section className="w-[87%] mx-auto">
@@ -22,32 +24,19 @@ const Courses = () => {
       </div>
 
       <div className="lg:flex hidden [&>div]:flex-1 gap-20">
-        <div className="">
-          <img src="/images/rectangle-18.png" className="mb-6 w-full" alt="" />
-          <h3 className="text-2xl mb-4">Laboratoria</h3>
-          <p>
-            Preparación y acompañamiento a estudiantes en la fase final de
-            formación para participar en procesos de selección.
-          </p>
-        </div>
+        {datosPageAboutUsCourse?.map((datos) => {
+          const { titulo, descripcion, imagen } = datos.attributes;
+          const urlIMG =
+            import.meta.env.VITE_IMG_URL + imagen?.data?.attributes.url;
 
-        <div className="">
-          <img src="/images/rectangle-18.png" className="mb-6 w-full" alt="" />
-          <h3 className="text-2xl mb-4">Aspen</h3>
-          <p>
-            Construcción de estrategias que busquen maxificar el bienestar del
-            emprendedor. Estrategias basadas en el expertiz de su carrera.
-          </p>
-        </div>
-
-        <div className="">
-          <img src="/images/rectangle-18.png" className="mb-6 w-full" alt="" />
-          <h3 className="text-2xl mb-4">Nesst</h3>
-          <p>
-            Sesiones de coaching en alianza con Nesst para CEOs de empresas de
-            impacto social.
-          </p>
-        </div>
+          return (
+            <div key={datos.id}>
+              <img src={urlIMG} className="mb-6 w-full" alt="" />
+              <h3 className="text-2xl mb-4">{titulo}</h3>
+              <p>{descripcion}</p>
+            </div>
+          );
+        })}
       </div>
 
       <div className="lg:hidden">

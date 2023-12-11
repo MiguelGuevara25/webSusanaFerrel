@@ -22,7 +22,7 @@ const AboutUs = () => {
                 <img
                   src="/images/nombreSusana.svg"
                   className="mb-4 lg:mt-0 mt-12"
-                  alt=""
+                  alt="Imagen de Susana"
                 />
 
                 <p className="lg:mb-12 mb-7">{cargo}</p>
