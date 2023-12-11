@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../../components/Button";
 import Founder from "../../../components/Founder";
 import Partners from "../../../components/Partners";
@@ -39,7 +40,10 @@ const Home = () => {
             </div>
 
             <p className="md:mb-16 mb-14 w-96">{descripcionArticulo}</p>
-            <Button>Empieza tu consultoría</Button>
+
+            <Link to="/contacto">
+              <Button>Empieza tu consultoría</Button>
+            </Link>
           </div>
         );
       })}

@@ -9,7 +9,7 @@ const AboutUs = () => {
     <div className="lg:pt-[100px] pt-14">
       <div className="relative flex lg:flex-row-reverse flex-col mb-20">
         <div className="relative lg:w-1/2 md:w-full">
-          <img src="/images/Susana.jpeg" className="w-full" />
+          <img src="/images/Susana.jpeg" className="w-full h-screen" />
           <div className="absolute fondoSusana inset-0"></div>
         </div>
 
@@ -35,7 +35,7 @@ const AboutUs = () => {
 
       <div className="mb-24">
         <Courses />
-      </div> 
+      </div>
 
       <CollaboratorsDetails />
     </div>

@@ -8,7 +8,6 @@ const Footer = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Desplázate al principio del footer cuando cambie de ubicación
     window.scrollTo(0, 0);
   }, [location]);
 
@@ -57,7 +56,7 @@ const Footer = () => {
 
           <div className="flex gap-4 [&>a]:bg-[#128266] [&>a]:rounded-full [&>a]:p-3 [&>a>img]:w-5 [&>a>img]:h-5">
             <a
-              href="https://www.linkedin.com/in/suferrel/"
+              href="https://www.linkedin.com/company/susana-ferrel-coaching-consultoria/"
               target="_blank"
               rel="noreferrer"
             >

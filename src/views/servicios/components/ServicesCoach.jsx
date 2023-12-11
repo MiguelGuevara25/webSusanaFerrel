@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Subtitles from "../../../components/Subtitles";
 import useServicios from "../../../hooks/useServicios";
 
@@ -29,15 +30,17 @@ const ServicesCoach = () => {
               <p className="mt-4">{descripcion}</p>
             </div>
 
-            <button className="flex text-[#2EB593] font-semibold items-center gap-3 ">
-              <p>Empecemos hoy</p>
-              <img
-                src="/images/group-10.svg"
-                className="animationButton2"
-                width={25}
-                alt=""
-              />
-            </button>
+            <Link to="/contacto">
+              <button className="flex text-[#2EB593] font-semibold items-center gap-3 ">
+                <p>Empecemos hoy</p>
+                <img
+                  src="/images/group-10.svg"
+                  className="animationButton2"
+                  width={25}
+                  alt="Flecha"
+                />
+              </button>
+            </Link>
           </div>
         );
       })}
