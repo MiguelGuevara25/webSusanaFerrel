@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import Subtitles from "../../../components/Subtitles";
 
 const Course = ({ curso }) => {
-  const { foto, descripcion, titulo } = curso.attributes;
+  const { foto, descripcion, titulo, urlCurso } = curso.attributes;
   const urlIMG = import.meta.env.VITE_IMG_URL + foto?.data?.attributes.url;
 
   return (
@@ -20,10 +21,12 @@ const Course = ({ curso }) => {
 
       <p className="mb-8 descriptionEmergencies">{descripcion}</p>
 
-      <button className="flex text-[#2EB593] font-semibold items-center gap-3 ">
-        <p>Conocer más</p>
-        <img src="/images/group-10.svg" width={25} alt="" />
-      </button>
+      <Link to={urlCurso} target="_blank">
+        <button className="flex text-[#2EB593] font-semibold items-center gap-3 ">
+          <p>Conocer más</p>
+          <img src="/images/group-10.svg" width={25} alt="" />
+        </button>
+      </Link>
     </div>
   );
 };

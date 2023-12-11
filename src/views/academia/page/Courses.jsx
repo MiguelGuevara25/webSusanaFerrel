@@ -55,9 +55,11 @@ const Courses = () => {
           </div>
         )}
 
-        <div className="flex justify-center lg:mb-40 mb-24">
-          <Button>Mostrar más articulos</Button>
-        </div>
+        {obtenerCursos?.length >= 7 && (
+          <div className="flex justify-center lg:mb-40 mb-24">
+            <Button>Mostrar más articulos</Button>
+          </div>
+        )}
       </section>
     </div>
   );
