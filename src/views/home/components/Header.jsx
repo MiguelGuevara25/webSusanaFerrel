@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../../components/Button";
 import useInicio from "../../../hooks/useInicio";
 
@@ -58,7 +59,9 @@ const Header = () => {
                 {subtituloPrincipal}
               </p>
               <div className="mb-5 self-center lg:self-start ml-1">
-                <Button>Conversemos</Button>
+                <Link to="/contacto">
+                  <Button>Conversemos</Button>
+                </Link>
               </div>
 
               <img className="self-start" src="/images/arrowDown.svg" />

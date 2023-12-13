@@ -16,7 +16,7 @@ const Servicios = () => {
         return (
           <div key={datos.id} className="relative flex flex-row-reverse">
             <div className="relative lg:w-1/2 md:w-full">
-              <img src={urlIMG} className="w-full lg:h-screen h-[450px]" />
+              <img src={urlIMG} className="w-full lg:h-screen h-[450px] object-cover" />
 
               <div className="absolute fondoSusana inset-0"></div>
             </div>

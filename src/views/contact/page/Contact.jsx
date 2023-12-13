@@ -17,13 +17,28 @@ const Contact = () => {
   const handleFormulario = async (e) => {
     e.preventDefault();
     if (
-      user.nombreCompleto === "" ||
-      user.empresa === "" ||
-      user.telefono === "" ||
-      user.correo === "" ||
+      user.nombreCompleto === "" &&
+      user.empresa === "" &&
+      user.telefono === "" &&
+      user.correo === "" &&
       user.mensaje === ""
     ) {
-      toast.error("Por favor, completa todos los campos");
+      toast.error("Completa todos los campos por favor");
+      return;
+    } else if (user.nombreCompleto === "") {
+      toast.error("Completa tu nombre por favor");
+      return;
+    } else if (user.empresa === "") {
+      toast.error("Completa tu empresa por favor");
+      return;
+    } else if (user.telefono === "") {
+      toast.error("Completa tu teléfono por favor");
+      return;
+    } else if (user.correo === "") {
+      toast.error("Completa tu correo por favor");
+      return;
+    } else if (user.mensaje === "") {
+      toast.error("Completa tu mensaje por favor");
       return;
     }
 

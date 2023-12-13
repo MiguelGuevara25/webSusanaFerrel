@@ -34,12 +34,12 @@ const Footer = () => {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
               <IoLocationSharp />
-              <span>Dirección</span>
+              <span>Jr. Alfonso de Silva #405 Dpto. 401 - Surco</span>
             </div>
 
             <div className="flex items-center gap-4">
               <IoCall />
-              <span>+51 555 555 555</span>
+              <span>+51 993 579 234</span>
             </div>
 
             <div className="flex items-center gap-4">

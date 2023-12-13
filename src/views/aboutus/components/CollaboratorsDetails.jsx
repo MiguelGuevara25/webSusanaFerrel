@@ -3,10 +3,24 @@ import CollaboratorDetail from "./CollaboratorDetail";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useCollaborators from "../../../hooks/useCollaborators";
 import useAboutUs from "../../../hooks/useAboutUs";
+import { useState } from "react";
 
 const CollaboratorsDetails = () => {
   const { colaborador } = useCollaborators();
   const { datosPageAboutUs } = useAboutUs();
+  const [moreDescription, setMoreDescription] = useState(
+    colaborador?.reduce((acc, colab) => {
+      acc[colab.id] = false;
+      return acc;
+    }, {})
+  );
+
+  const handleMoreDescription = (id) => {
+    setMoreDescription((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   return (
     <section className="overflow-hidden">
@@ -49,7 +63,19 @@ const CollaboratorsDetails = () => {
                   <span className="font-semibold text-2xl">{nombre}</span>
                   <span className="font-semibold text-base mb-4">{cargo}</span>
 
-                  <p className="text-base descriptionEmergencies2">{funcion}</p>
+                  <p
+                    className={`text-base ${
+                      moreDescription[colab.id] ? "" : "descriptionEmergencies2"
+                    }`}
+                  >
+                    {funcion}
+                  </p>
+                  <span
+                    className="font-bold text-base mt-4 cursor-pointer w-max"
+                    onClick={() => handleMoreDescription(colab.id)}
+                  >
+                    {moreDescription[colab.id] ? "Ver menos..." : "Ver más..."}
+                  </span>
                 </div>
               </SwiperSlide>
             );
