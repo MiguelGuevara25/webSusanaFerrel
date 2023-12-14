@@ -16,6 +16,8 @@ const Contact = () => {
 
   const handleFormulario = async (e) => {
     e.preventDefault();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (
       user.nombreCompleto === "" &&
       user.empresa === "" &&
@@ -37,6 +39,9 @@ const Contact = () => {
     } else if (user.correo === "") {
       toast.error("Completa tu correo por favor");
       return;
+    } else if (!emailRegex.test(user.correo)) {
+      toast.error("Ingresa un correo electrónico válido");
+      return;
     } else if (user.mensaje === "") {
       toast.error("Completa tu mensaje por favor");
       return;
@@ -50,8 +55,7 @@ const Contact = () => {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         toast.success("Datos enviados correctamente");
       })
       .catch((error) => {
