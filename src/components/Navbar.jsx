@@ -100,7 +100,7 @@ const Navbar = () => {
                   </span>
                 </Link>
 
-                <Link to="/academia">
+                {/*<Link to="/academia">
                   <span
                     className={`effect__hover ${
                       location.pathname === "/academia" &&
@@ -109,7 +109,7 @@ const Navbar = () => {
                   >
                     Academia
                   </span>
-                </Link>
+                  </Link>*/}
               </div>
 
               <div className="lg:block hidden">

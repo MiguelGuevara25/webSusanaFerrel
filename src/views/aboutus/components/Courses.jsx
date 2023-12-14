@@ -46,39 +46,21 @@ const Courses = () => {
           className="mySwiper text-xs w-full"
           style={{ paddingRight: "24px" }}
         >
-          <SwiperSlide style={{ width: "200px" }}>
-            <div className="flex flex-col gap-4">
-              <img src="/images/rectangle-18.png" alt="" />
-              <h3 className="text-2xl">Laboratoria</h3>
-              <p>
-                Preparación y acompañamiento a estudiantes en la fase final de
-                formación para participar en procesos de selección.
-              </p>
-            </div>
-          </SwiperSlide>
+          {datosPageAboutUsCourse?.map((datos) => {
+            const { titulo, descripcion, imagen } = datos.attributes;
+            const urlIMG =
+              import.meta.env.VITE_IMG_URL + imagen?.data?.attributes.url;
 
-          <SwiperSlide style={{ width: "200px" }}>
-            <div className="flex flex-col gap-4">
-              <img src="/images/rectangle-18.png" alt="" />
-              <h3 className="text-2xl">Aspen</h3>
-              <p>
-                Construcción de estrategias que busquen maxificar el bienestar
-                del emprendedor. Estrategias basadas en el expertiz de su
-                carrera.
-              </p>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide style={{ width: "200px" }}>
-            <div className="flex flex-col gap-4">
-              <img src="/images/rectangle-18.png" alt="" />
-              <h3 className="text-2xl">Nesst</h3>
-              <p>
-                Sesiones de coaching en alianza con Nesst para CEOs de empresas
-                de impacto social.
-              </p>
-            </div>
-          </SwiperSlide>
+            return (
+              <SwiperSlide key={datos.id} style={{ width: "200px" }}>
+                <div className="flex flex-col gap-4">
+                  <img src={urlIMG} alt="" />
+                  <h3 className="text-2xl">{titulo}</h3>
+                  <p>{descripcion}</p>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>

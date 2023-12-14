@@ -87,7 +87,7 @@ const Contact = () => {
               onChange={handleChange}
             />
             <input
-              type="tel"
+              type="number"
               placeholder="Teléfono"
               name="telefono"
               required
