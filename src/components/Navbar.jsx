@@ -158,9 +158,9 @@ const Navbar = () => {
                   <h4>Blog</h4>
                 </Link>
 
-                <Link to="/academia" onClick={closeModal}>
+                {/* <Link to="/academia" onClick={closeModal}>
                   <h4>Academia</h4>
-                </Link>
+                </Link> */}
 
                 <Link to="/contacto" onClick={closeModal}>
                   <h4>Conversemos</h4>
