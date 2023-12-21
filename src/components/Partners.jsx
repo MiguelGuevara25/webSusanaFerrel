@@ -23,10 +23,13 @@ const Partners = () => {
             </div>
 
             <div className="relative">
-              <div className="max-w-screen-xl mx-auto flex flex-row flex-wrap justify-center py-20 gap-x-10 items-center">
+              <div className="max-w-screen-xl mx-auto flex flex-row flex-wrap justify-center gap-x-10 items-center">
                 {logo_partners.data.map((partner, index) => {
                   return (
-                    <div className="basis-auto w-[90px] md:w-48" key={index}>
+                    <div
+                      className="basis-auto w-[90px] md:w-48 justify-center flex"
+                      key={index}
+                    >
                       <img
                         src={`${imgUrl}${partner.attributes.url}`}
                         alt={`Partner ${index + 1}`}
