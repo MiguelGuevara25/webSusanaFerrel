@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Post = ({ postBlog }) => {
-  const { titulo, foto, categoria, publishedAt, descripcion, url } =
+  const { titulo, foto, categoria, publishedAt, descripcionCompleta, url } =
     postBlog.attributes;
   const urlIMG = import.meta.env.VITE_IMG_URL + foto?.data?.attributes.url;
 
@@ -33,7 +33,7 @@ const Post = ({ postBlog }) => {
         {formatearFecha(publishedAt)}
       </span>
 
-      <p className="descriptionEmergencies2 mt-4 mb-8">{descripcion}</p>
+      <p className="descriptionEmergencies2 mt-4 mb-8">{descripcionCompleta}</p>
 
       <div className="w-1/2 border-b border-[#128266]"></div>
     </div>
