@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import usePost from "../../../hooks/usePost";
 import Post from "../components/Post";
 import Subtitles from "../../../components/Subtitles";
+import Markdown from "react-markdown";
 
 const Blog = () => {
   const {
@@ -56,9 +57,9 @@ const Blog = () => {
               )}
             </div>
 
-            <p className="descriptionEmergencies2 mb-8">
-              {postAnt?.attributes.descripcion}
-            </p>
+            <Markdown className="descriptionEmergencies2 mb-8 postMD">
+              {postAnt?.attributes.descripcionCompleta}
+            </Markdown>
 
             <Link to={`/post/${postAnt?.attributes.url}`}>
               <button className="flex text-[#2EB593] font-semibold gap-3 items-center">

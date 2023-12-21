@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Markdown from "react-markdown";
 
 const PostDetails = () => {
   const [postDetails, setPostDetails] = useState([]);
@@ -51,7 +52,9 @@ const PostDetails = () => {
           className="md:mb-16 md:mt-9 my-10"
         />
 
-        <p className="mb-16">{postDetails?.descripcion}</p>
+        <Markdown className="mb-16 postMD">
+          {postDetails?.descripcionCompleta}
+        </Markdown>
 
         <button
           className="flex text-[#2EB593] font-semibold gap-3 items-center"
