@@ -1,3 +1,4 @@
+import Markdown from "react-markdown";
 import { Link } from "react-router-dom";
 
 const Post = ({ postBlog }) => {
@@ -33,7 +34,9 @@ const Post = ({ postBlog }) => {
         {formatearFecha(publishedAt)}
       </span>
 
-      <p className="descriptionEmergencies2 mt-4 mb-8">{descripcionCompleta}</p>
+      <Markdown className="descriptionEmergencies2 mt-4 mb-8">
+        {descripcionCompleta}
+      </Markdown>
 
       <div className="w-1/2 border-b border-[#128266]"></div>
     </div>
