@@ -48,11 +48,11 @@ const Navbar = () => {
         </div>
       ) : (
         <>
-          <nav className="lg:py-6 py-3 bg-white text-[#024F3C] fixed w-full z-30 shadow-lg">
+          <nav className="lg:py-4 py-3 bg-white text-[#024F3C] fixed w-full z-30 shadow-lg">
             <div className="flex justify-between items-center w-[87%] mx-auto">
-              <div className="flex">
+              <div className="flex basis-auto w-60 h-12"> 
                 <Link to="/">
-                  <img src="/images/logoFerrel.svg" />
+                  <img src="/images/logoFerrel.svg" className="w-full h-full" />
                 </Link>
               </div>
 
