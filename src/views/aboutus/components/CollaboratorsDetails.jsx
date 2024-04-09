@@ -41,46 +41,56 @@ const CollaboratorsDetails = () => {
           </div>
         </div>
       ) : (
-        <Swiper
-          slidesPerView={"auto"}
-          spaceBetween={86}
-          className="mySwiper w-full text-xs"
-          style={{ paddingLeft: "6.5%" }}
-        >
-          {colaborador?.map((colab) => {
-            const { foto, nombre, cargo, funcion } = colab.attributes;
-            const urlIMG =
-              import.meta.env.VITE_IMG_URL + foto?.data?.attributes.url;
+        <>
+          <Swiper
+            slidesPerView={"auto"}
+            spaceBetween={86}
+            className="mySwiper text-xs scroll-container"
+            style={{ marginLeft: "6.5%", marginRight: "6.5%", overflowX: "scroll" }}
+          >
+            {colaborador?.map((colab) => {
+              const { foto, nombre, cargo, funcion } = colab.attributes;
+              const urlIMG =
+                import.meta.env.VITE_IMG_URL + foto?.data?.attributes.url;
 
-            return (
-              <SwiperSlide key={colab.id} style={{ width: "341px" }}>
-                <div className="hidden lg:flex flex-col mb-40">
-                  <img
-                    src={urlIMG}
-                    className="h-[248px] object-cover rounded-xl w-full mb-6"
-                    style={{ objectPosition: "0% 27%" }}
-                  />
-                  <span className="font-semibold text-2xl">{nombre}</span>
-                  <span className="font-semibold text-base mb-4">{cargo}</span>
+              return (
+                <SwiperSlide key={colab.id} style={{ width: "341px" }}>
+                  <div className="hidden lg:flex flex-col pb-20">
+                    <img
+                      src={urlIMG}
+                      className="h-[248px] object-cover rounded-xl w-full mb-6"
+                      style={{ objectPosition: "0% 27%" }}
+                    />
+                    <span className="font-semibold text-2xl">{nombre}</span>
+                    <span className="font-semibold text-base mb-4">
+                      {cargo}
+                    </span>
 
-                  <p
-                    className={`text-base ${
-                      moreDescription[colab.id] ? "" : "descriptionEmergencies2"
-                    }`}
-                  >
-                    {funcion}
-                  </p>
-                  <span
-                    className="font-bold text-base mt-4 cursor-pointer w-max"
-                    onClick={() => handleMoreDescription(colab.id)}
-                  >
-                    {moreDescription[colab.id] ? "Ver menos..." : "Ver más..."}
-                  </span>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+                    <p
+                      className={`text-base ${
+                        moreDescription[colab.id]
+                          ? ""
+                          : "descriptionEmergencies2"
+                      }`}
+                    >
+                      {funcion}
+                    </p>
+                    <span
+                      className="font-bold text-base mt-4 cursor-pointer w-max"
+                      onClick={() => handleMoreDescription(colab.id)}
+                    >
+                      {moreDescription[colab.id]
+                        ? "Ver menos..."
+                        : "Ver más..."}
+                    </span>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+
+          <div className="lg:my-10"></div>
+        </>
       )}
 
       <div className="lg:hidden flex flex-col gap-14 w-[87%] mx-auto mb-20">

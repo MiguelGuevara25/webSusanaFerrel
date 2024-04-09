@@ -152,3 +152,34 @@ h1 {
 .postMD img {
   width: 100%;
 }
+
+.scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #2EB593;
+  border-radius: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #024F3C;
+  border-radius: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media screen and (max-width: 1024px) {
+  .scroll-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important; /* Para mejorar el desplazamiento en iOS */
+  }
+
+  /* Oculta el scrollbar en WebKit */
+  .scroll-container::-webkit-scrollbar {
+    display: none !important;
+  }
+}
